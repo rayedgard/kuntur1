@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 /*  hola mundo */
 html, body{
     font-size: 100%;
-	background:	#fff; /*Color del fondo del cuerpo*/
+	/*background:	#fff; Color del fondo del cuerpo*/
 	font-family: 'Open Sans', sans-serif !important;
 }
 body a{
