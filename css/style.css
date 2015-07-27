@@ -4,9 +4,10 @@ Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
+/*  hola mundo */
 html, body{
     font-size: 100%;
-	/*background:	#fff;*/
+	background:	#fff; /*Color del fondo del cuerpo*/
 	font-family: 'Open Sans', sans-serif !important;
 }
 body a{
@@ -42,10 +43,11 @@ body a:hover{
 }
 .header-top input[type="text"]{
 	outline:none;
-	background:#9cc303;
+	background:#FE5400; /*Color del botón del fondo de "search" 9cc303*/
+	opacity: 0.73;
 	border:none;
 	padding:11px 7px;
-	color:#fff;
+	color:#fff; /*Color de las letras una vez que se busca en el "search" fff*/
 	font-size:15px;
 	text-align:center;
 	border-radius: 5px;
@@ -55,7 +57,7 @@ body a:hover{
   -ms-border-radius: 5px;
 }
 ::-webkit-input-placeholder{
-	color:#CDEF49 !important;
+	color:#F6A26F !important; /*Color de las letras "SEARCH" por defecto CDEF49*/
 }
 .header-bottom{
 	margin:2em 0;
@@ -69,7 +71,7 @@ body a:hover{
 	display: block;
 	font-size: 42px;
 	text-decoration: none;
-	color: #fff;
+	color: #fff;/*Color de las letras del logo ECO TRAVEL fff*/
 	font-weight: 400;
 	letter-spacing:3px;
 	font-family: 'Roboto Slab', serif;
@@ -79,7 +81,8 @@ body a:hover{
 }
 .header-bottom-left a:hover{
 	text-decoration:none;
-	color:#fff;
+	color:#FE5400;/*Color despues de pasar el puntero sobre el logo ECO TRAVEL fff*/
+	opacity: 0.73;
 }
 .header-bottom-right{
 	float:right;
@@ -89,12 +92,13 @@ body a:hover{
 	display:none;
 }
 .header-bottom-right{
-	background:#9cc303;
+	background:#FE5400;/*Color del fondo del menu 9cc303*/
 	border-radius: 5px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
   -o-border-radius: 5px;
   -ms-border-radius: 5px;
+  opacity: 0.73;
 }
 .header-bottom-right ul{
 	padding:1em 2em;
@@ -106,18 +110,18 @@ body a:hover{
 }
 .header-bottom-right ul li a{
 	font-size:15px;
-	color:#fff;
+	color:#fff;/*Color de las letras del menu por defecto fff*/
 	text-decoration:none;
 	font-family: 'Roboto Slab', serif;
 }
 .header-bottom-right ul li a:hover,.header-bottom-right ul li.cap a{
-	color:#000;
+	color:#000;/*Color de la letra seleccionada de la barra menu*/
 	text-decoration:none;
 }
 /*-- //header --*/
 /*-- banner --*/
 .banner-with-text{
-	background: url(../images/2.jpg) no-repeat 0px -170px;
+	background: url(../images/2.jpg) no-repeat 0px -170px; /*Imagen de fondo del banner principal*/
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -125,8 +129,10 @@ body a:hover{
 	-ms-background-size: cover;
 	min-height: 770px;
 }
+
+
 .banner-with-text1{
-	background: url(../images/2.jpg) no-repeat 0px -170px;
+	background: url(../images/2.jpg) no-repeat 0px -170px; /*IMagen de fonde del banner secundario de otroas paginas */
 	background-size: cover;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -144,14 +150,14 @@ body a:hover{
 	padding:15em 0 0 5em;
 }
 .jumbotron h1{
-	color:#FFFFFF !important;
+	color:#FFFFFF !important; /*Color del titulo de la información dentro del banner FFFFFF*/
 	font-weight: 300;
 	margin: 0;
 	font-size: 40px !important;
 	font-family: 'Roboto Slab', serif;
 }
 .jumbotron p{
-	color:#FFFFFF;
+	color:#FFFFFF; /*Color del contenido de la información dentro del banner FFFFFF*/
 	font-size: 14px !important;
 	font-weight: 400 !important;
 	margin: 2em 0 3em;
@@ -159,8 +165,9 @@ body a:hover{
 }
 .jumbotron a{
 	padding: 12px 30px;
-	background:#9cc303;
-	color: #fff;
+	background:#FE5400; /*Color del fondo del botón de la información dentro del banner principal 9cc303*/
+	color: #fff; /*Color de las letras del boton de la información dentro del banner principal fff*/
+	opacity: 0.73;
 	font-size: 15px;
 	text-decoration:none;
 	border-radius:5px;
@@ -172,8 +179,9 @@ body a:hover{
 }
 .jumbotron a:hover{
 	text-decoration:none;
-	color:#9cc303;
-	background: #fff;
+	color:#FE5400;  /*Color de las letras despues del hover del botón*/
+	background: #fff; /*Color del fondo de las letras despues del hover del botón*/
+	opacity: 0.73;
 }
 /*-- //banner --*/
 /*------------------ Slider Part starts Here----------*/
@@ -402,11 +410,12 @@ ul.social-slide li i.mac{
    height: 17px;
   width: 17px;
   display: inline-block;
-  background:#fff;
+  background:#fff;/*dos puntos suspencivos del banner*/
   border-radius: 100%;
 }
 .callbacks_here a:after{
-	background:#9cc303;
+	background:#FE5400; /*un punto suspencivo del banner*/
+	opacity: 0.9;
 }
 /*------------------ Slider Part ends Here----------*/
 /* Shutter In Horizontal */
@@ -462,7 +471,7 @@ ul.social-slide li i.mac{
 /*-- banner-bottom --*/
 .banner-bottom{
 	padding:2em 0 2em;
-	background:#fdfaf6;
+	background:#fdfaf6;/*fondo del body*/
 }
 .banner-bottom-grid{
 	position:relative;
@@ -477,8 +486,8 @@ ul.social-slide li i.mac{
 }
 .more a{
 	padding:6px 35px 8px;
-	color:#fff;
-	background:#9cc303;
+	color:#fff;/*letras por defecto del boton "more" de los paquetes*/
+	background:#FE5400;/*color de fondo por defecto del botón "more" de los paquetes*/
 	font-size:15px;
 	text-decoration:none;
 	border-radius:5px;
@@ -491,11 +500,12 @@ ul.social-slide li i.mac{
 	-moz-transition:.5s all;
 	-o-transition:.5s all;
 	-ms-transition:.5s all;
+	opacity: 0.73;
 }
 .more a:hover{
 	text-decoration:none;
-	color:#a5ce03;
-	background:#fff;
+	color:#FE5400; /*Color de las letras despues de la transición*/
+	background:#fff; /*Colo del fondo del botoón despues de la transición*/
 }
 .features{
 	padding:2em 0;
@@ -519,7 +529,7 @@ ul.social-slide li i.mac{
 	margin-bottom:0 !important;
 }
 .features-left-grid1 h4 a{
-	color:#9cc303;
+	color:#FE5400;/*Color del titulo de los dos textos */
 	font-size:18px;
 	text-decoration:none;
 	background: none;
@@ -527,14 +537,14 @@ ul.social-slide li i.mac{
 }
 .features-left-grid1 h4 a:hover{
 	text-decoration:none;
-	color:#000;
+	color:#000; /*Color del titutlo de los dos textos despues de la transición*/
 	background: none;
 }
 .features-left-grid1 h4{
 	margin:0 0 .5em;
 }
 .features-left-grid1 p{
-	color:#000;
+	color:#000; /*Color de los dos textos*/
 	font-size:14px !important;
 	margin:0;
 	line-height:1.7em;
@@ -543,7 +553,7 @@ a.read{
 	text-align:center;
 	margin: 1em 0 0 20em;
 	border: none;
-	color:#9cc303 !important;
+	color:#FE5400 !important; /*Color del link read more de los dos textos*/
 	font-size:15px !important;
 	text-decoration:none !important;
 	background: url(../images/1.png) no-repeat 12em 1.3em !important;
@@ -552,13 +562,13 @@ a.read{
 }
 a.read:hover{
 	text-decoration:none;
-	color:#000 !important;
+	color:#000 !important; /*Color del link read more despues de la transición*/
 }
 .features-left-grids:nth-child(3){
 	margin:2em 0 0;
 }
 .features-rgt{
-	background:#eaeaea;
+	background:#FAE1BD; /*Color de fondo del Upcoming Events*/
 	padding:1em;
 	margin-top: 1.5em;
 	border-radius: 7px;
@@ -568,7 +578,7 @@ a.read:hover{
 	-ms-border-radius: 7px;
 }
 .features-right h3{
-	color:#728d09;
+	color:#D25B0B; /*Color del titulo del Upcoming Events*/
 	font-size: 20px;
 	margin: 0 0 1em;
 	font-weight: 600;
@@ -576,7 +586,7 @@ a.read:hover{
 }
 .features-rgt-grid{
 	padding-bottom:.3em;
-	border-bottom:1px dashed #000;
+	border-bottom:1px dashed #D25B0B;/*Color de las lineas punteadas del cuerpo Upcomiing Evets del index*/
 }
 .features-rgt-grid-left{
 	float:left;
@@ -586,7 +596,7 @@ a.read:hover{
 	margin:1em 0 0;
 }
 .features-rgt-grid-left h4 a{
-	color: #000;
+	color: #000; /*Color de los titulos del cuerpo del Upcoming events*/
 	font-size: 17px;
 	text-decoration: none;
 	background: none;
@@ -595,15 +605,16 @@ a.read:hover{
 }
 .features-rgt-grid-left h4 a:hover{
 	text-decoration:none;
-	color:#9CC303;
+	color:#D25B0B;
 }
 .features-rgt-grid-left p{
 	margin:0 0 1em;
-	color:#939191;
+	color:#FE5400;/*Color del texto debajo del titulo del cuerpo del upcoming events*/
 	font-size:12px;
+
 }
 .features-rgt-grid-left a{
-	color:#6c4b40;
+	color:#6c4b40;/*Color del "moreinfo" del upcoming events*/
 	font-size:12px;
 	font-weight: 600;
 	text-decoration:none;
@@ -613,7 +624,7 @@ a.read:hover{
 }
 .features-rgt-grid-left a:hover{
 	text-decoration:none;
-	color: #000;
+	color: #000;/*Color del "moreinfo" del upcoming events despues de la transición*/
 }
 .features-left-grid1 {
   background: none !important;
@@ -625,7 +636,7 @@ a.read:hover{
 }
 .features-rgt-grid-right p{
 	padding: 1em 1.3em;
-	color: #fff;
+	color: #fff;/*Color de las letras dentro del circulo*/
 	font-size: 14px;
 	margin: 0 0 .4em;
 	border-radius:100%;
@@ -633,7 +644,8 @@ a.read:hover{
 	-moz-border-radius:100%;
 	-o-border-radius:100%;
 	-ms-border-radius:100%;
-	background:#9cc303;
+	background:#FE5400;/*Color del fondo del circulo dentro de UPCOMING EVENTS*/
+	opacity: 0.8;
 }
 .features-rgt-grid:nth-child(3) {
   padding:1em 0 0.3em;
@@ -647,8 +659,8 @@ a.read:hover{
 }
 .all-events a{
 	padding:8px 30px;
-	background:#add803;
-	color:#fff;
+	background:#FE5400;/*Color del fondo de las letras del botón "all events"*/
+	color:#fff;/*fondo de las letras del b´ton "all events"*/
 	font-size:15px;
 	text-decoration:none;
 	border-radius: 5px;
@@ -661,16 +673,17 @@ a.read:hover{
 	-moz-transition:.5s all;
 	-o-transition:.5s all;
 	-ms-transition:.5s all;
+	opacity: 0.8;
 }
 .all-events a:hover{
 	text-decoration:none;
-	color:#add803;
-	background:#fff;
+	color:#FE5400;/*fondo de las letras del b´ton "all events" despues de la transición*/
+	background:#fff;/*Color del fondo de las letras del botón "all events" despues de la transicón*/
 }
 /*-- //banner-bottom --*/
 /*-- slider --*/
 .sliderfig{
-	background:#eaefc5;
+	background:#FFEFDC; /*fondo del banner secundario del index*/
 	padding:2em 0em;
 }
 .sliderfig-grid img{
@@ -683,11 +696,11 @@ a.read:hover{
 	position:absolute;
 	top: 68%;
 	left:5%;
-	background: #fff;
+	background: #fff;/*fondo de las letras del banner secundario*/
 	padding: 1.3em;
 }
 .slider-text p{
-	color:#803e1b;
+	color:#803e1b;/*Color de las letras del banner secundario*/
 	font-size:15px;
 	margin:0;
 }
@@ -756,13 +769,14 @@ background: url(../images/3.png) no-repeat -66px 0px;
 /*-- footer-top --*/
 .footer-top{
 	padding:2em 0 0;
-	background:#fff;
+	background:#fff;/*color del fondo del footer*/
 }
 .footer-top-grid h3{
-	background:#9FC703;
+	background:#FE5400;/*Color del fond de las letras del titulo del footer*/
+	opacity: 0.84;
 	padding:1em;
 	font-size:17px;
-	color:#fff;
+	color:#fff; /*letras de los titulos del footer*/
 	margin:0;
 	box-shadow: -4px 4px 1px #555;
 	-webkit-box-shadow: -4px 4px 1px #555;
@@ -782,7 +796,7 @@ background: url(../images/3.png) no-repeat -66px 0px;
 	margin:1em 0 0 14em;
 }
 .read1 a{
-	color:#9fc703;
+	color:#FE5400;/*color de las letras del link "readmore" del footer*/
 	font-size:15px;
 	text-decoration:none;
 	background: url(../images/1.png) no-repeat 8.5em 0.56em;
@@ -791,7 +805,7 @@ background: url(../images/3.png) no-repeat -66px 0px;
 }
 .read1 a:hover{
 	text-decoration:none;
-	color:#000;
+	color:#000;/*Color de las letras del link "readmore" del footer despues de la transición*/
 }
 .twi-txt{
 	padding:2em 0 0;
@@ -819,12 +833,12 @@ background: url(../images/3.png) no-repeat -66px 0px;
 }
 .twi-text p a{
 	font-size: 14px;
-	color: #000;
+	color: #000;/*Color de las letras de los nombres de los social*/
 	text-decoration:none;
 }
 .twi-text p a:hover{
 	text-decoration:none;
-	color:#9FC703;
+	color:#FE5400;/*Color de las letras de los nombres de los social despues de la transición*/
 }
 .twi a.flickr{
 	background:url(../images/img-sp.png) no-repeat -89px -58px;
@@ -848,7 +862,7 @@ background: url(../images/3.png) no-repeat -66px 0px;
 }
 .footer-top-grid ul.last li a,.footer-top-grid ul li{
 	font-size: 14px;
-	color: #000;
+	color: #000;/*color de las letras al costado de los social*/
 	display:-webkit-inline-box;
 	font-style:normal;
 	text-decoration:none;
@@ -856,7 +870,7 @@ background: url(../images/3.png) no-repeat -66px 0px;
 .footer-top-grid ul.last li a:hover{
 	padding-left:.5em;
 	text-decoration:none;
-	color:#9cc303;
+	color:#FE5400;/*color de las letras al costado de los social despues de la transición*/
 }
 .footer-top-grid ul{
 	padding:1em 0;
@@ -884,22 +898,23 @@ ul.last li{
 /*-- footer --*/
 .footer{
 	padding:2em 0;
-	background:#9fc703;
+	background:#FE5400;/*Color de fondo del footer*/
+	opacity: 0.90;
 	text-align:center;
 }
 .footer p{
-	color:#fff;
+	color:#fff;/*Letra del footer de abajo*/
 	font-size: 17px;
 	margin:0;
 	font-family: 'Roboto Slab', serif;
 }
 .footer p a{
-	color:#fff;
+	color:#fff;/*Color de la letra w3layouts*/
 	text-decoration:none;
 }
 .footer p a:hover{
 	text-decoration:none;
-	color:#000;
+	color:#000;/*Color de la letra w3layouts despues de la transición*/
 }
 /*-- //footer --*/	
 /*-- to-top --*/
@@ -934,15 +949,15 @@ ul.last li{
 	font-size:12em;
 	font-weight:700;
 	text-align:center;
-	color:#9CC303;
+	color:#9CC303;/*COlor de los nunermos 404 */
 }
 .error-page{
 	padding:90px 0;
 	min-height: 700px;
-	background: #fdfaf6;
+	background: #fdfaf6;/*Color del fondo de la pagina de error*/
 }
 .error-info h3 span{
-	color:#3d3d3d;
+	color:#3d3d3d;/*Color del numero del medio de 404 de la pagina de error*/
 }
 .error-info p:nth-child(2){
 	color:#9CC303;
@@ -978,14 +993,14 @@ ul.last li{
 /*-- gallery --*/
 .gallery{
 	padding:2em 0;
-	background:#fff;
+	background:#fff;/*Color del fondo del titulo de la pagina galeria*/
 }
 .gallery h3{
 	text-align:center;
 	font-size:35px;
 	font-weight:600;
 	margin:0 0 .5em;
-	color:#9ec503;
+	color:#9ec503; /*Color del titulo de la pagina galeria*/
 	font-family: 'Roboto Slab', serif;
 }
 p.gal-txt{
@@ -1028,18 +1043,18 @@ p.gal-txt{
 .about-grd h4{
 	font-size:20px;
 	font-weight:600;
-	color:#47443A;
+	color:#47443A; /*Color del titulo de la pagina about*/
 	font-family: 'Roboto Slab', serif;
 	}
 .about-grd h4 span{
 	display:block;
-	color:#DB7037;
+	color:#DB7037; /*Color del subtitulo de la pagina about*/
 	font-size: 15px;
 	margin: .1em 0;
 	text-transform:lowercase;
 	}
 .about-grd p{
-	color:#47443A;
+	color:#47443A;/*Color de cuerpo de texto de la pagina about: ;*/
 	font-size: 14px;
 	margin: 1em 0 0;
 	line-height: 1.7em;
@@ -1053,7 +1068,7 @@ p.gal-txt{
 	width:40%;
 	}
 .people-left h3{
-	color:#47443A;
+	color:#47443A; /*Color del segundo titulo*/
 	font-size: 20px;
 	margin: 0 0 1em;
 	font-weight:600;
@@ -1071,8 +1086,8 @@ p.gal-txt{
 	float: left;
 	border-radius: 100%;
 	padding: .5em 1em;
-	color: #fff;
-	background: #9cc303;
+	color: #fff; /*Color de los numeros dentro del circulo */
+	background: #9cc303;/*Color del fondo de los numeros del circulo*/
 	}
 .numer-right{
 	float:left;
@@ -1083,24 +1098,24 @@ p.gal-txt{
 	margin:0;
 	}
 .numer-right h4 a{
-	color:#307D34;
+	color:#307D34;/*Colo de los subtitulos del segundo bloque*/
 	font-size:18px;
 	font-weight:600;
 	text-decoration:none;
 	}
 .numer-right h4 span{
 	display:block;
-	color:#DB7037;
+	color:#DB7037;/*Color de los subtitulos de subtitulos del segundo bloque*/
 	font-size: 15px;
 	margin: .1em 0;
 	font-style: normal;
 	}
 .numer-right h4 a:hover{
 	text-decoration:none;
-	color:#DB7037;
+	color:#DB7037; /*color de los subtitulos despues de la trnasición*/
 	}
 .numer-right p{
-	color:#47443A;
+	color:#47443A;/*Color del texto del segundo cuerpo*/
 	font-size:14px;
 	margin:1em 0 0;
 	font-style: normal;
@@ -2934,7 +2949,6 @@ ul.last1 li{
 		display:none;
 	}
 }
-
 
 /*para el video background de la portada*/
 #video-background
