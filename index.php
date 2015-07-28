@@ -38,6 +38,103 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
+
+
+
+
+<!-------------codigo php and mysql--------------->
+
+
+
+  
+    <!-- coneccion php -->
+    <?php 
+	include_once("conexion.php");
+	$link = Conectarse();
+	
+	//conulta 
+	$consultaPaquetes ="SELECT paquetes.idPaquete, paquetes.nombrePaquete, banner.imagen, paquetes.costo FROM  banner, paquetes WHERE paquetes.eliminar='0' AND banner.idPaquete = paquetes.idPaquete ORDER BY paquetes.idPaquete DESC LIMIT 3"; 
+$paquetes = mysql_query($consultaPaquetes,$link);
+
+	//nombre del titulo
+	$idPaquete=array();
+	$nombrePaquete=array();
+	$imagen=array();
+	$costo=array();
+
+while($row2 = mysql_fetch_array($paquetes))
+		{
+		array_push($idPaquete,$row2[0]);
+		array_push($nombrePaquete,$row2[1]);
+		array_push($imagen,$row2[2]);
+		array_push($costo,$row2[3]);
+		}
+	
+	//------------------------
+	//conuslta para paquetes aleatorios
+	$paquetesAleatorios ="SELECT idPaquete, nombrePaquete, imagen, costo FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND() LIMIT 3"; 
+$paquetesAle = mysql_query($paquetesAleatorios,$link);
+	
+		//nombre del titulo
+	$idPaqueteAl=array();
+	$nombrePaqueteAl=array();
+	$imagenAl=array();
+	$costoAl=array();
+
+while($row2 = mysql_fetch_array($paquetesAle))
+		{
+		array_push($idPaqueteAl,$row2[0]);
+		array_push($nombrePaqueteAl,$row2[1]);
+		array_push($imagenAl,$row2[2]);
+		array_push($costoAl,$row2[3]);
+		}	
+
+//conuslta para los dos ultimos paquetes
+	$paquetesFinales ="SELECT idPaquete, nombrePaquete, imagen, costo, descripcion FROM `paquetes` WHERE eliminar='0'  ORDER BY fechaPublicacion desc LIMIT 2"; 
+$paquetesFin = mysql_query($paquetesFinales,$link);
+	
+		//nombre del titulo
+	$idPaqueteFin=array();
+	$nombrePaqueteFin=array();
+	$imagenFin=array();
+	$costoFin=array();
+	$descripcionFin= array();
+
+while($row2 = mysql_fetch_array($paquetesFin))
+		{
+		array_push($idPaqueteFin,$row2[0]);
+		array_push($nombrePaqueteFin,$row2[1]);
+		array_push($imagenFin,$row2[2]);
+		array_push($costoFin,$row2[3]);
+		array_push($descripcionFin, $row2[4]);
+		}
+
+	//linea de codigo para almacenar los tipos de trancsicion de los paquetes
+	$transicion =array();
+	$transicion[0] = "banner wow fadeInUpBig animated";
+	$transicion[1] = "banner wow fadeInDownBig animated";
+	$transicion[2] = "banner wow bounceInLeft animated";
+	$transicion[3] = "banner wow bounceInRight animated";
+	//fin transiciones
+
+	?>
+
+
+
+<!-----------fin php and mysql--------->
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- banner -->
 	<div >
 	<!--carga el video de fondo-->
@@ -159,60 +256,96 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 	<div class="banner-bottom" id="events">
 			<div class="banner-bottom-grids">
+				
+
+
+
+
+
+			  <?php
+			  for($k=0;$k<count($idPaqueteAl);$k++)
+			  {
+			   ?>
+
 				<div class="col-md-4 banner-bottom-grid">
-					<img src="images/6.jpg" alt=" "/>
+					<img src="administracion/imagenes/paquetes/<?php echo $imagenAl[$k];?>" alt="">
+
 					<div class="more">
+				
 						<a href="single.html">More</a>
 					</div>
 				</div>
-				<div class="col-md-4 banner-bottom-grid">
-					<img src="images/7.jpg" alt=" "/>
-					<div class="more">
-						<a href="single.html">More</a>
-					</div>
-				</div>
-				<div class="col-md-4 banner-bottom-grid">
-					<img src="images/5.jpg" alt=" "/>
-					<div class="more">
-						<a href="single.html">More</a>
-					</div>
-				</div>
+
+				<?php  } ?>
+
+
+
+
+
+
+
+
+
+
 				<div class="clearfix"> </div>
+			
+
+
+
+
 			</div>
 			<div class="features">
 				<div class="col-md-9 features-left">
+					
+					<!-- titulo -->
 					<h3> Ut enim ad minima veniam, quis nostrum</h3>
+
+
+
+
+ 			  <?php
+			  for($l=0;$l<count($idPaqueteFin);$l++)
+			  {
+			   ?>
+
+
+
+
+
 					<div class="features-left-grids">
 						<div class="col-md-4 features-left-grid">
-							<a href="single.html"><img src="images/1.jpg" alt=" " /></a>
+							<a href="single.html">
+								
+								<img src="administracion/imagenes/paquetes/<?php echo $imagenFin[$l];?>" alt="">
+
+							</a>
 						</div>
 						<div class="col-md-8 jumbotron features-left-grid1">
-							<h4><a href="single.html">Quis autem vel eum minima veniam</a></h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus 
-								qui blanditiis praesentium voluptatum deleniti atque corrupti 
-								quos dolores et quas molestias excepturi sint occaecati 
-								cupiditate non provident, similique sunt in culpa qui officia
-								deserunt mollitia animi, id est laborum et dolorum fuga.</p>
+							<h4><a href="single.html"><?php echo $nombrePaqueteFin[$l];?></a></h4>
+							<p>
+								
+								<?php echo  strip_tags($descripcionFin[$l]);?>
+							</p>
 							<p><a class="btn read btn-primary btn-lg" href="pages/single.html" role="button">Read More</a></p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="features-left-grids">
-						<div class="col-md-4 features-left-grid">
-							<a href="single.html"><img src="images/3.jpg" alt=" " /></a>
-						</div>
-						<div class="col-md-8 jumbotron features-left-grid1">
-							<h4><a href="single.html">Quis autem vel eum minima veniam</a></h4>
-							<p>At vero eos et accusamus et iusto odio dignissimos ducimus 
-								qui blanditiis praesentium voluptatum deleniti atque corrupti 
-								quos dolores et quas molestias excepturi sint occaecati 
-								cupiditate non provident, similique sunt in culpa qui officia
-								deserunt mollitia animi, id est laborum et dolorum fuga.</p>
-							<p><a class="btn read btn-primary btn-lg" href="pages/single.html" role="button">Read More</a></p>
-						</div>
-						<div class="clearfix"> </div>
-					</div>
+
+
+				<?php  } ?>
+
+
+
+			
+
+
+
+
 				</div>
+
+
+
+
 				<div class="col-md-3 features-right">
 					<div class="features-rgt">
 						<h3>Upcoming Events</h3>
@@ -393,6 +526,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+</html>
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>
@@ -416,4 +550,3 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</script>
 <!-- //here ends scrolling icon -->
 </body>
-</html>
