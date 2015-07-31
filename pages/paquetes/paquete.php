@@ -69,13 +69,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../../index.php">HOME</a></li>
-						<li><a href="../about.php">ABOUT</a></li>
-						<li><a href="../events.php">EVENTS</a></li>
-						<li><a href="../services.php">SERVICES</a></li>
-						<li><a href="../gallery.php">GALLERIES</a></li>
-						<li class="cap"><a href="../blog.php">BLOG</a></li>
-						<li><a href="../contact.php">CONTACT</a></li>
+							<li class="cap"><a href="../../index.php">INICIO</a></li>
+						
+						<li><a href="../events.php">QUIENES SOMOS</a></li>
+						
+						<li><a href="../gallery.php">MULTIMEDIA</a></li>
+						<li><a href="../blog.php">PAQUETES</a></li>
+						<li><a href="../contact.php">CONTACTOS</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -120,16 +120,15 @@ $row = mysql_fetch_array($paquetelista);
 
 <!-- single -->
 	<div class="banner-bdy sig">
+
 		<div class="container">
+
 			<div class="single">
 
 
 			<div class="col-md-8 sing-img-text">
 
-
-				<img src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" alt=" ">
-
-
+				<img align="right" src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" alt=" ">
 
 				<div class="sing-img-text1">
 
@@ -143,27 +142,52 @@ $row = mysql_fetch_array($paquetelista);
 						</span>
 						</p>
 
-
+					
+						
 
 					<div class="list">
 						<ul>
 							<li><a href="#" class="a"> </a></li>
 							<li><a href="#" class="b"> </a></li> 
-							<li><a href="#" class="c"> </a></li>
+							<li><a href="https://www.facebook.com/pages/Informatic-Technology-Development-Corporation-SA/157087624356221" class="c"> </a></li>
 						</ul>
 					</div>
+					
+					<div class="fb-like"></div></br>
+					<div class="fb-share-button" data-href="http://tours.itdecsa.com/pages/paquetes/paquete.php?cod=5" data-layout="button_count"></div>
 
 
 
 					<div class="com">
 						<h3>Comments</h3>
+
+						<div id="fb-root"></div>
+						<script>(function(d, s, id) {
+ 						 var js, fjs = d.getElementsByTagName(s)[0];
+  						if (d.getElementById(id)) return;
+  						js = d.createElement(s); js.id = id;
+  						js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+
+						<div class="fb-comments" data-href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?fref=ts" data-numposts="5"></div></br>
+
+						
+
+						<!--
 						<ul class="media-list">
+
+
 						  <li class="media">
+
+
 							<div class="media-left">
 							  <a href="#">
 								<img class="media-object" src="../../images/11.jpg" alt="" />
 							  </a>
 							</div>
+
+
 							<div class="media-body">
 							  <h4 class="media-heading">Simmy</h4>
 							  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus 
@@ -174,12 +198,16 @@ $row = mysql_fetch_array($paquetelista);
 							  <a href="#">Reply</a>
 							</div>
 						  </li>
+
+
+
 						  <li class="media">
 							<div class="media-left">
 							  <a href="#">
 								<img class="media-object" src="../../images/13.jpg" alt="" />
 							  </a>
 							</div>
+
 							<div class="media-body">
 							  <h4 class="media-heading">Sandra Rickon</h4>
 							  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus 
@@ -190,6 +218,8 @@ $row = mysql_fetch_array($paquetelista);
 							  <a href="#">Reply</a>
 							</div>
 						  </li>
+
+
 						  <li class="media">
 							<div class="media-left">
 							  <a href="#">
@@ -206,7 +236,9 @@ $row = mysql_fetch_array($paquetelista);
 							  <a href="#">Reply</a>
 							</div>
 						  </li>
-						</ul>
+
+
+						</ul>-->
 					</div>
 					
 				</div>
@@ -224,15 +256,48 @@ $row = mysql_fetch_array($paquetelista);
 						</form>
 					</div>
 					<div class="categories">
-						<h3>Categories</h3>
+						<h3>OTROS PAQUETES</h3>
+
+						<?php 
+							$consultaPaqueteAleatorio = "SELECT idPaquete, nombrePaquete, imagen, costo FROM paquetes WHERE eliminar='0' ORDER BY RAND()";
+							$conexPaqueteAleatorio = mysql_query($consultaPaqueteAleatorio,$link);
+
+							//creamos arreglos
+							$idPaqueteAl=array();
+							$nombrePaqueteAl=array();
+							$imagenAl=array();
+							$costoAl=array();
+
+							// Asignamos datos a los arreglos
+							
+							while($ArregloPaqAle = mysql_fetch_array($conexPaqueteAleatorio))
+							{
+								array_push($idPaqueteAl, $ArregloPaqAle[0]);
+								array_push($nombrePaqueteAl, $ArregloPaqAle[1]);
+								array_push($imagenAl, $ArregloPaqAle[2]);
+								array_push($costoAl, $ArregloPaqAle[3]);
+							}
+						?>
+
+						
 						<ul>
-							<li><a href="#">Aliquam dapibus tincidunt</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
-							<li><a href="#">Fusce feugiat malesuada odio</a></li>
-							<li><a href="#">Cum sociis natoque penatibus</a></li>
-							<li><a href="#">Magnis dis parturient montes</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
+
+
+						<?php
+						for ($x=0; $x <count($idPaqueteAl) ; $x++) 
+						{ 
+						?>
+							
+						
+							<li><a href="#"><?php echo $nombrePaqueteAl[$x]; ?></a></li>	
+
+					<?php } ?>
+
 						</ul>
+
+
+
+
 					</div>
 					<div class="categories categories-mid">
 						<h3>Archieves</h3>
@@ -251,7 +316,7 @@ $row = mysql_fetch_array($paquetelista);
 
 						<?php
 
-						//consulta para paquetes aleatorios
+						//consulta para Destinos aleatorios
 						$consultaAleatorio ="SELECT a.idDestino, a.imagenDestino, a.nombreDestino, a.descripcion FROM destinos a 
 						INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0'  ORDER BY RAND()"; 
 						$destino = mysql_query($consultaAleatorio,$link);
@@ -281,7 +346,7 @@ $row = mysql_fetch_array($paquetelista);
 							</div>
 
 							<div class="related-post-right">
-								<h4><a href="paquete.php"><?php echo $nombreDestino[$k]; ?></a></h4>
+								<h4><a href="destino.php"><?php echo $nombreDestino[$k]; ?></a></h4>
 								<p>
 									<span><?php echo substr(strip_tags($descripcionDestino[$k]),0,50)."..."; ?></span>
 								</p>
@@ -329,7 +394,7 @@ $row = mysql_fetch_array($paquetelista);
 	<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>About Eco Travel</h3>
+				<h3>Acerca de Kuntur Travel</h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
@@ -340,7 +405,7 @@ $row = mysql_fetch_array($paquetelista);
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Connect With Us</h3>
+				<h3>Redes Sociales</h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -370,7 +435,7 @@ $row = mysql_fetch_array($paquetelista);
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Extra Features</h3>
+				<h3>Caracteristicas Extras</h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

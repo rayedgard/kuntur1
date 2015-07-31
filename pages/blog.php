@@ -67,14 +67,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
-					<ul class="nav1">
-						<li><a href="../index.php">HOME</a></li>
-						<li><a href="about.php">ABOUT</a></li>
-						<li><a href="events.php">EVENTS</a></li>
-						<li><a href="services.php">SERVICES</a></li>
-						<li><a href="gallery.php">GALLERIES</a></li>
-						<li class="cap"><a href="blog.php">BLOG</a></li>
-						<li><a href="contact.php">CONTACT</a></li>
+							<ul class="nav1">
+						<li><a href="../index.php">INICIO</a></li>						
+						<li><a href="events.php">QUIENES SOMOS</a></li>						
+						<li><a href="gallery.php">MULTIMEDIA</a></li>
+						<li class="cap"><a href="blog.php">PAQUETES</a></li>
+						<li><a href="contact.php">CONTACTOS</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -96,129 +94,77 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-bdy blg">
 	<div class="container">
 	<div class="blog">
-		<h2>Blog</h2>
+		<h2>Paquetes</h2>
 		<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
 		cumque nihil impedit quo minus id quod maxime placeat facere possimus,
 		omnis voluptas assumenda est, omnis dolor repellendus.</p>
+	
 		<div class="blog-grids">
+
+
+		<?php
+
+		include_once("../conexion.php");
+		$link=Conectarse();
+
+		//consulta de paquetes aleatorios
+		$ConsultaPaqueteAl = "SELECT idPaquete, nombrePaquete, imagen, costo, descripcion FROM paquetes WHERE eliminar='0' ORDER BY RAND()";
+		$ConsultaAl =mysql_query($ConsultaPaqueteAl,$link);
+
+		//crear los arreglos
+		$idPaqueteAl=array();
+		$nombrePaqueteAl=array();
+		$imagenAl=array();
+		$costoAl=array();
+		$descripcionAl=array();
+
+		//Asignar Parquete al arreglo
+		while ($row = mysql_fetch_array($ConsultaAl)) {
+			array_push($idPaqueteAl,$row[0]);
+			array_push($nombrePaqueteAl,$row[1]);
+			array_push($imagenAl,$row[2]);
+			array_push($costoAl,$row[3]);			
+			array_push($descripcionAl,$row[4]);	
+		}
+
+
+		for ($i=0; $i <count($idPaqueteAl) ; $i++) /*Tiene que generar 4*/
+		 { ?>
+
+			
 			<div class="col-md-3 blog-grid">
+
+			
+					
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/4.jpg" alt=" " /></a>
+					<a href="single.html"><img src="../administracion/imagenes/paquetes/<?php echo $imagenAl[$i]; ?>" alt=" " /></a> <!--IMAGEN -->
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
-								<span>May 20,2015.</span>
+							<a href="paquetes/paquete.php"><?php echo $nombrePaqueteAl[$i];  ?></a> <!--NOMBRE-->
+								<span>Precio: S/. <?php echo $costoAl[$i];  ?></span> <!--COSTO -->
 						</div>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
+						<p><?php echo substr(strip_tags($descripcionAl[$i]),0,26)."..."; ?></p> <!--PARRAFO -->
+
+
 						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
+							<a href="paquetes/paquete.php">Read More</a> 
 						</div>
 					</div>
-				</div>
-				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/5.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
-							<span>May 20,2015.</span>
-						</div>
-						<p>At et accusamus et iusto....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
+				</div>	
 			</div>
-			<div class="col-md-3 blog-grid">
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/6.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
-							<span>May 20,2015.</span>
-						</div>
-						<p>At vero eos et accusamus et iusto odio dignissimos....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/7.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
-							<span>May 20,2015.</span>
-						</div>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 blog-grid">
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/10.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
-							<span>May 20,2015.</span>
-						</div>
-						<p>At et accusamus et iusto....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/5.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
-							<span>May 20,2015.</span>
-						</div>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus
-						molestias excepturi sint occaecati cupiditate....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-3 blog-grid">
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/4.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
-							<span>May 20,2015.</span>
-						</div>
-						<p>At et accusamus et iusto excepturi sint occaecati cupiditate....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-				<div class="blog-grid1">
-					<a href="paquetes/paquete/paquete.php"><img src="../images/6.jpg" alt=" " /></a>
-					<div class="blog-grid1-info">
-						<div class="soluta">
-							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
-							<span>May 20,2015.</span>
-						</div>
-						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
-						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
-						<div class="red-mre">
-							<a href="paquetes/paquete/paquete.php">Read More</a> 
-						</div>
-					</div>
-				</div>
-			</div>
+				<?php }?>
+
+
+
+
+
+
+
+
+
 			<div class="clearfix"> </div>
 		</div>
+		<!--
 		<nav>
 		  <ul class="pagination">
 			<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
@@ -229,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<li><a href="#">5 <span class="sr-only">(current)</span></a></li>
 			<li class="abled"><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 		  </ul>
-		</nav>
+		</nav>-->
 	</div>
 	</div>
 	</div>
@@ -239,18 +185,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>About Eco Travel</h3>
+				<h3>Acerca de Kuntur Travel</h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="paquetes/paquete/paquete.php">Read More</a>
+					<a href="paquetes/paquete.php">Leer Más</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Connect With Us</h3>
+				<h3>Redes Sociales</h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -280,7 +226,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Extra Features</h3>
+				<h3>Caracteristicas Extras</h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

@@ -68,14 +68,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.php">HOME</a></li>
-						<li><a href="about.php">ABOUT</a></li>
-						<li><a href="events.php">EVENTS</a></li>
-						<li><a href="services.php">SERVICES</a></li>
-						<li class="cap"><a href="gallery.php">GALLERIES</a></li>
-						<li><a href="blog.php">BLOG</a></li>
-						<li><a href="contact.php">CONTACT</a></li>
+						<li><a href="../index.php">INICIO</a></li>						
+						<li><a href="events.php">QUIENES SOMOS</a></li>						
+						<li class="cap"><a href="gallery.php">MULTIMEDIA</a></li>
+						<li><a href="blog.php">PAQUETES</a></li>
+						<li><a href="contact.php">CONTACTOS</a></li>
 					</ul>
+
+					<!-- 
+
+						<ul class="nav1">
+						<li><a href="../index.php">INICIO</a></li>
+						<li><a href="about.php">ABOUT</a></li>
+						<li><a href="events.php">QUIENES SOMOS</a></li>
+						<li><a href="services.php">SERVICES</a></li>
+						<li class="cap"><a href="gallery.php">MULTIMEDIA</a></li>
+						<li><a href="blog.php">PAQUETES</a></li>
+						<li><a href="contact.php">CONTACTOS</a></li>
+					</ul>
+	
+					-->
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -96,7 +108,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-bdy gal">
    <div class="container">
 	<div class="gallery">
-		<h3>Gallery</h3>
+		<h3>Multimedia</h3>
 		<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
 		cumque nihil impedit quo minus id quod maxime placeat facere possimus,
 		omnis voluptas assumenda est, omnis dolor repellendus.</p>
@@ -145,18 +157,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>About Eco Travel</h3>
+				<h3>Acerca de Kuntur Travel</h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="paquetes/paquete.php">Read More</a>
+					<a href="paquetes/paquete.php">Leer Más</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Connect With Us</h3>
+				<h3>Redes Sociales</h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -186,7 +198,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Extra Features</h3>
+				<h3>Caracteristicas Extras</h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>
@@ -198,7 +210,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-		</div>
+	</div>
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>

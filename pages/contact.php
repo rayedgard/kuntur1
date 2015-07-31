@@ -68,13 +68,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.php">HOME</a></li>
-						<li><a href="about.php">ABOUT</a></li>
-						<li><a href="events.php">EVENTS</a></li>
-						<li><a href="services.php">SERVICES</a></li>
-						<li><a href="gallery.php">GALLERIES</a></li>
-						<li><a href="blog.php">BLOG</a></li>
-						<li class="cap"><a href="contact.php">CONTACT</a></li>
+						<li><a href="../index.php">INICIO</a></li>						
+						<li><a href="events.php">QUIENES SOMOS</a></li>						
+						<li><a href="gallery.php">MULTIMEDIA</a></li>
+						<li><a href="blog.php">PAQUETES</a></li>
+						<li  class="cap"><a href="contact.php">CONTACTOS</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -97,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="container">
 			<div class="contact">
 				<div class="map">
-					<h3>Contact</h3>
+					<h3>Contactos</h3>
 					<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
 					cumque nihil impedit quo minus id quod maxime placeat facere possimus,
 					omnis voluptas assumenda est, omnis dolor repellendus.</p>
@@ -105,10 +103,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="contact-form">
 					<div class="col-md-4 contact-form-left">
-						<h4>CONTACT INFO</h4>
+						<h4>Información del Contacto</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
 							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-						<h5>Address:</h5>
+						<h5>Dirección:</h5>
 						<p>Eiusmod Tempor inc</p>
 						<p>9560 St Dolore Place,</p>
 						<p>Telephone: +1 800 603 6035</p>
@@ -116,7 +114,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<a href="mailto:example@email.com">mail@example.com</a>
 					</div>
 					<div class="col-md-8 contact-form-right">
-						<h4>CONTACT FORM</h4>
+						<h4>Formulario</h4>
 						<form>
 							<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 							<input type="email" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">
@@ -136,18 +134,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>About Eco Travel</h3>
+				<h3>Acerca de Kuntur Travel</h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="paquetes/paquete.php">Read More</a>
+					<a href="paquetes/paquete.php">Leer Más</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Connect With Us</h3>
+				<h3>Redes Sociales</h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -177,7 +175,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Extra Features</h3>
+				<h3>Caracteristicas Extras</h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

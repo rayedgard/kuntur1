@@ -138,7 +138,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 <!-- banner -->
 	<div >
 	<!--carga el video de fondo-->
-	 <iframe id="video-background" width="560" height="315" src="//www.youtubeeeeee.com/embed/KdEdI40iOwU?time=1m20s&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;html5=1&amp;allowfullscreen=true&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+	 <iframe id="video-background" width="560" height="315" src="//www.youtube.com/embed/KdEdI40iOwU?time=1m20s&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;html5=1&amp;allowfullscreen=true&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
     <!--fin video de fondo--> 
 			
 
@@ -157,14 +157,12 @@ while($row2 = mysql_fetch_array($paquetesFin))
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li class="cap"><a href="index.php">HOME</a></li>
-						<li><a href="pages/about.php">ABOUT</a></li>
-						<li><a href="pages/events.php">EVENTS</a></li>
-						<li><a href="pages/services.php">SERVICES</a></li>
-						<li><a href="pages/gallery.php">GALLERIES</a></li>
-						<li><a href="pages/blog.php">BLOG</a></li>
-						<li><a href="pages/contact.php">CONTACT</a></li>
-					</ul>
+						<li class="cap"><a href="index.php">INICIO</a></li>						
+						<li><a href="pages/events.php">QUIENES SOMOS</a></li>						
+						<li><a href="pages/gallery.php">MULTIMEDIA</a></li>
+						<li><a href="pages/blog.php">PAQUETES</a></li>
+						<li><a href="pages/contact.php">CONTACTOS</a></li>
+					</ul>	
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -216,7 +214,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">LEER MÁS</a></p>
 							</div>
 						</div>
 					</li>
@@ -229,7 +227,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">LEER MÁS</a></p>
 							</div>
 						</div>
 					</li>
@@ -242,7 +240,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">LEER MÁS</a></p>
 							</div>
 						</div>
 					</li>
@@ -268,7 +266,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 
 					<div class="more">
 				
-						<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>">More</a>
+						<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>">MÁS</a>
 					</div>
 				</div>
 
@@ -288,7 +286,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 
 
  			  <?php
-			  for($l=0;$l<count($idPaqueteFin);$l++)
+			  for($l=0;$l<count($idPaqueteAl);$l++)
 			  {
 			   ?>
 
@@ -296,17 +294,17 @@ while($row2 = mysql_fetch_array($paquetesFin))
 						<div class="col-md-4 features-left-grid">
 							<a href="pages/paquetes/paquete.php">
 								
-								<img src="administracion/imagenes/paquetes/<?php echo $imagenFin[$l];?>" alt="">
+								<img src="administracion/imagenes/paquetes/<?php echo $imagenAl[$l];?>" alt="">
 
 							</a>
 						</div>
 						<div class="col-md-8 jumbotron features-left-grid1">
-							<h4><a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $nombrePaqueteFin[$l];?></a></h4>
+							<h4><a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $nombrePaqueteAl[$l];?></a></h4>
 							<p>
 								
 								<?php echo  strip_tags($descripcionFin[$l]);?>
 							</p>
-							<p><a class="btn read btn-primary btn-lg" href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$l];?>" role="button">Read More</a></p>
+							<p><a class="btn read btn-primary btn-lg" href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$l];?>" role="button">Leer Más</a></p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -452,18 +450,18 @@ while($row2 = mysql_fetch_array($paquetesFin))
 	<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>About Eco Travel</h3>
+				<h3>Acerca de Kuntur Travel</h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="pages/paquetes/paquete.php">Read More</a>
+					<a href="paquetes/paquete.php">Leer Más</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Connect With Us</h3>
+				<h3>Redes Sociales</h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -493,7 +491,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Extra Features</h3>
+				<h3>Caracteristicas Extras</h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>
@@ -506,12 +504,11 @@ while($row2 = mysql_fetch_array($paquetesFin))
 			<div class="clearfix"> </div>
 		</div>
 	</div>
-</html>
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>
 	</div>
-<!-- //footer -->	
+<!-- //footer -->
 <!-- here stars scrolling icon -->
 	<script type="text/javascript">
 		$(document).ready(function() {

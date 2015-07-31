@@ -8,12 +8,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | About :: w3layouts</title>
-<link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:300,700,100,400' rel='stylesheet' type='text/css'>
 <!-- js -->
-<script src="../js/jquery.min.js"></script>
+<script src="../../js/jquery.min.js"></script>
 <!-- //js -->
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,8 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
 <!-- start-smoth-scrolling -->
-<script type="text/javascript" src="../js/move-top.js"></script>
-<script type="text/javascript" src="../js/easing.js"></script>
+<script type="text/javascript" src="../../js/move-top.js"></script>
+<script type="text/javascript" src="../../js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		
@@ -36,8 +36,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </script>
 <!-- start-smoth-scrolling -->
 <!-- pop-up -->
-<link rel="stylesheet" href="../css/touchTouch.css" type="text/css" media="all" />
-<script type="text/javascript" src="../js/jquery.fancybox.js"></script>
+<link rel="stylesheet" href="../../css/touchTouch.css" type="text/css" media="all" />
+<script type="text/javascript" src="../../js/jquery.fancybox.js"></script>
 	   <script type="text/javascript">
 			$(document).ready(function() {
 				/*
@@ -61,18 +61,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="header-bottom">
 				<div class="header-bottom-left">
 					<a href="index.html">
-					<img src="../images/kuntur.png">
+					<img src="../../images/kuntur.png">
 
 					</a>
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li class="cap"><a href="../index.php">INICIO</a></li>						
-						<li><a href="pages/events.php">QUIENES SOMOS</a></li>						
-						<li><a href="pages/gallery.php">MULTIMEDIA</a></li>
-						<li><a href="pages/blog.php">PAQUETES</a></li>
-						<li><a href="pages/contact.php">CONTACTOS</a></li>
+						<li class="cap"><a href="../../index.php">INICIO</a></li>						
+						<li><a href="../events.php">QUIENES SOMOS</a></li>						
+						<li><a href="../gallery.php">MULTIMEDIA</a></li>
+						<li><a href="../blog.php">PAQUETES</a></li>
+						<li><a href="../contact.php">CONTACTOS</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -98,7 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="content-text-bottom">
 				<div class="about-grids">
 					<div class="col-md-6 about-grid">
-						<img src="../images/3.jpg" alt=" " />
+						<img src="../../images/3.jpg" alt=" " />
 					</div>
 					<div class="col-md-6 about-grd">
 						<h4>Proin Dictum Elementum Velit
@@ -130,7 +130,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="numer">1
 							</div>
 							<div class="numer-right">
-								<h4><a href="paquetes/paquete.php">Donec et justo tincidunt</a>
+								<h4><a href="paquete.php">Donec et justo tincidunt</a>
 									<span>posuere elementum ante</span></h4>
 								<p> Etiam interdum nisi ligula, ultrices molestie augue molestie nec. 
 									Phasellus at est vitae sapien vestibulum convallis ut vel lorem. 
@@ -142,7 +142,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="numer">2
 							</div>
 							<div class="numer-right">
-								<h4><a href="paquetes/paquete.php">Donec et justo tincidunt</a>
+								<h4><a href="paquete.php">Donec et justo tincidunt</a>
 									<span>posuere elementum ante</span></h4>
 								<p> Etiam interdum nisi ligula, ultrices molestie augue molestie nec. 
 									Phasellus at est vitae sapien vestibulum convallis ut vel lorem. 
@@ -154,7 +154,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<div class="numer">3
 							</div>
 							<div class="numer-right">
-								<h4><a href="paquetes/paquete.php">Donec et justo tincidunt</a>
+								<h4><a href="paquete.php">Donec et justo tincidunt</a>
 									<span>posuere elementum ante</span></h4>
 								<p> Etiam interdum nisi ligula, ultrices molestie augue molestie nec. 
 									Phasellus at est vitae sapien vestibulum convallis ut vel lorem. 
@@ -168,7 +168,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>We Think Globally</h3>
 					<div class="fig-text">
 						<div class="fig-text-left">
-							<img src="../images/4.jpg" alt=" " />
+							<img src="../../images/4.jpg" alt=" " />
 						</div>
 						<div class="fig-text-right">
 							<h4>Etiam interdum nisi ligula, ultrices</h4>
@@ -225,7 +225,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="clearfix"> </div>
 			</div>
 		<div class="testimon">
-			<script src="../js/responsiveslides.min.js"></script>
+			<script src="../../js/responsiveslides.min.js"></script>
 				 <script>
 				    // You can also use "$(window).load(function() {"
 				    $(function () {

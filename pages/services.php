@@ -54,13 +54,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.php">HOME</a></li>
-						<li><a href="about.php">ABOUT</a></li>
-						<li><a href="events.php">EVENTS</a></li>
-						<li class="cap"><a href="services.php">SERVICES</a></li>
-						<li><a href="gallery.php">GALLERIES</a></li>
-						<li><a href="blog.php">BLOG</a></li>
-						<li><a href="contact.php">CONTACT</a></li>
+						<li><a href="../index.php">INICIO</a></li>						
+						<li><a href="events.php">QUIENES SOMOS</a></li>						
+						<li class="cap"><a href="gallery.php">MULTIMEDIA</a></li>
+						<li><a href="blog.php">PAQUETES</a></li>
+						<li><a href="contact.php">CONTACTOS</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
