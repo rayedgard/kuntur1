@@ -138,7 +138,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 <!-- banner -->
 	<div >
 	<!--carga el video de fondo-->
-	 <iframe id="video-background" width="560" height="315" src="//www.youtube.com/embed/KdEdI40iOwU?time=1m20s&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;html5=1&amp;allowfullscreen=true&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
+	 <iframe id="video-background" width="560" height="315" src="//www.youtubeeeeee.com/embed/KdEdI40iOwU?time=1m20s&amp;rel=0&amp;controls=0&amp;showinfo=0&amp;autoplay=1&amp;html5=1&amp;allowfullscreen=true&amp;wmode=transparent" frameborder="0" allowfullscreen></iframe>
     <!--fin video de fondo--> 
 			
 
@@ -149,7 +149,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">
+					<a href="index.php">
 					<img src="images/kuntur.png">
 
 					</a>
@@ -157,13 +157,13 @@ while($row2 = mysql_fetch_array($paquetesFin))
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li class="cap"><a href="pages/index.html">HOME</a></li>
-						<li><a href="pages/about.html">ABOUT</a></li>
-						<li><a href="pages/events.html">EVENTS</a></li>
-						<li><a href="pages/services.html">SERVICES</a></li>
-						<li><a href="pages/gallery.html">GALLERIES</a></li>
-						<li><a href="pages/blog.html">BLOG</a></li>
-						<li><a href="pages/contact.html">CONTACT</a></li>
+						<li class="cap"><a href="index.php">HOME</a></li>
+						<li><a href="pages/about.php">ABOUT</a></li>
+						<li><a href="pages/events.php">EVENTS</a></li>
+						<li><a href="pages/services.php">SERVICES</a></li>
+						<li><a href="pages/gallery.php">GALLERIES</a></li>
+						<li><a href="pages/blog.php">BLOG</a></li>
+						<li><a href="pages/contact.php">CONTACT</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -216,7 +216,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/single.html" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
 							</div>
 						</div>
 					</li>
@@ -229,7 +229,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/single.html" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
 							</div>
 						</div>
 					</li>
@@ -242,7 +242,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 									quae ab illo inventore veritatis et quasi architecto beatae vitae dicta 
 									sunt explicabo accusantium doloremque laudantium, totam rem aperiam, eaque ipsa 
 									quae ab illo inventore veritatis et quasi architecto beatae.</p>
-								<p><a class="btn btn-primary btn-lg" href="pages/single.html" role="button">READ MORE</a></p>
+								<p><a class="btn btn-primary btn-lg" href="pages/paquetes/paquete.php" role="button">READ MORE</a></p>
 							</div>
 						</div>
 					</li>
@@ -258,10 +258,6 @@ while($row2 = mysql_fetch_array($paquetesFin))
 			<div class="banner-bottom-grids">
 				
 
-
-
-
-
 			  <?php
 			  for($k=0;$k<count($idPaqueteAl);$k++)
 			  {
@@ -272,33 +268,21 @@ while($row2 = mysql_fetch_array($paquetesFin))
 
 					<div class="more">
 				
-						<a href="single.html">More</a>
+						<a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>">More</a>
 					</div>
 				</div>
 
 				<?php  } ?>
 
 
-
-
-
-
-
-
-
-
 				<div class="clearfix"> </div>
-			
-
-
-
 
 			</div>
 			<div class="features">
 				<div class="col-md-9 features-left">
 					
 					<!-- titulo -->
-					<h3> Ut enim ad minima veniam, quis nostrum</h3>
+					<h3> PAQUETES</h3>
 
 
 
@@ -308,25 +292,21 @@ while($row2 = mysql_fetch_array($paquetesFin))
 			  {
 			   ?>
 
-
-
-
-
 					<div class="features-left-grids">
 						<div class="col-md-4 features-left-grid">
-							<a href="single.html">
+							<a href="pages/paquetes/paquete.php">
 								
 								<img src="administracion/imagenes/paquetes/<?php echo $imagenFin[$l];?>" alt="">
 
 							</a>
 						</div>
 						<div class="col-md-8 jumbotron features-left-grid1">
-							<h4><a href="single.html"><?php echo $nombrePaqueteFin[$l];?></a></h4>
+							<h4><a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>"><?php echo $nombrePaqueteFin[$l];?></a></h4>
 							<p>
 								
 								<?php echo  strip_tags($descripcionFin[$l]);?>
 							</p>
-							<p><a class="btn read btn-primary btn-lg" href="pages/single.html" role="button">Read More</a></p>
+							<p><a class="btn read btn-primary btn-lg" href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$l];?>" role="button">Read More</a></p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -353,7 +333,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 							<div class="features-rgt-grid-left">
 								<h4><a href="single.html">Culpa Qui Officia</a></h4>
 								<p>cupiditate non provident</p>
-								<a href="single.html">More Info</a>
+								<a href="pages/paquetes/paquete.php">More Info</a>
 							</div>
 							<div class="features-rgt-grid-right">
 								<p>15th May</p>
@@ -362,7 +342,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 						</div>
 						<div class="features-rgt-grid">
 							<div class="features-rgt-grid-left">
-								<h4><a href="single.html">Culpa Qui Officia</a></h4>
+								<h4><a href="pages/paquetes/paquete.php">Culpa Qui Officia</a></h4>
 								<p>cupiditate non provident</p>
 								<a href="single.html">More Info</a>
 							</div>
@@ -375,7 +355,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 							<div class="features-rgt-grid-left">
 								<h4><a href="single.html">Culpa Qui Officia</a></h4>
 								<p>cupiditate non provident</p>
-								<a href="single.html">More Info</a>
+								<a href="pages/paquetes/paquete.php">More Info</a>
 							</div>
 							<div class="features-rgt-grid-right">
 								<p>15th May</p>
@@ -383,7 +363,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 							<div class="clearfix"> </div>
 						</div>
 						<div class="all-events">
-							<a href="single.html">All Events</a>
+							<a href="pages/paquetes/paquete.php">All Events</a>
 						</div>
 					</div>
 				</div>
@@ -479,7 +459,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="single.html">Read More</a>
+					<a href="pages/paquetes/paquete.php">Read More</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">

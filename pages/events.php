@@ -60,7 +60,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">
+					<a href="index.php">
 					<img src="../images/kuntur.png">
 
 					</a>
@@ -68,13 +68,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li  class="cap"><a href="events.html">EVENTS</a></li>
-						<li><a href="services.html">SERVICES</a></li>
-						<li><a href="gallery.html">GALLERIES</a></li>
-						<li><a href="blog.html">BLOG</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
+						<li><a href="../index.php">HOME</a></li>
+						<li><a href="about.php">ABOUT</a></li>
+						<li  class="cap"><a href="events.php">EVENTS</a></li>
+						<li><a href="services.php">SERVICES</a></li>
+						<li><a href="gallery.php">GALLERIES</a></li>
+						<li><a href="blog.php">BLOG</a></li>
+						<li><a href="contact.php">CONTACT</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -105,12 +105,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p class="dte">20 May,2015</p>
 						<img src="../images/3.jpg" alt=" " />
 						<div class="nobis">
-							<a href="single.html">impedit minus id quod soluta<span> maxime placeat facere</span></a>
+							<a href="paquetes/paquete.php">impedit minus id quod soluta<span> maxime placeat facere</span></a>
 						</div>
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="single.html">More Info</a>
+							<a href="paquetes/paquete.php">More Info</a>
 						</div>
 					</div>
 					<div class="col-md-4 event-grid">
@@ -122,19 +122,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="single.html">More Info</a>
+							<a href="paquetes/paquete.php">More Info</a>
 						</div>
 					</div>
 					<div class="col-md-4 event-grid">
 						<p class="dte">25 May,2015</p>
 						<img src="../images/5.jpg" alt=" " />
 						<div class="nobis">
-							<a href="single.html">soluta nobis est eligendi quod <span>placeat facere possimus</span></a>
+							<a href="paquetes/paquete.php">soluta nobis est eligendi quod <span>placeat facere possimus</span></a>
 						</div>
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="single.html">More Info</a>
+							<a href="paquetes/paquete.php">More Info</a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
@@ -187,7 +187,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="single.html">Read More</a>
+					<a href="paquetes/paquete.php">Read More</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">

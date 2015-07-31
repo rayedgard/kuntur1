@@ -2992,7 +2992,7 @@ ul.last1 li{
 /*para el video background de la portada*/
 #video-background
 {
-    height: 112%;
+    height: 120%;
     position: fixed;
     width: 100%;
     z-index: -100;

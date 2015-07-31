@@ -68,13 +68,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="events.html">EVENTS</a></li>
-						<li><a href="services.html">SERVICES</a></li>
-						<li><a href="gallery.html">GALLERIES</a></li>
-						<li class="cap"><a href="blog.html">BLOG</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
+						<li><a href="../index.php">HOME</a></li>
+						<li><a href="about.php">ABOUT</a></li>
+						<li><a href="events.php">EVENTS</a></li>
+						<li><a href="services.php">SERVICES</a></li>
+						<li><a href="gallery.php">GALLERIES</a></li>
+						<li class="cap"><a href="blog.php">BLOG</a></li>
+						<li><a href="contact.php">CONTACT</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -106,13 +106,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="single.html"><img src="../images/4.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a> 
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
 								<span>May 20,2015.</span>
 						</div>
 						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
 						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
@@ -120,99 +120,99 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<a href="single.html"><img src="../images/5.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a>
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
 							<span>May 20,2015.</span>
 						</div>
 						<p>At et accusamus et iusto....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 blog-grid">
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/6.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/6.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a>
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
 							<span>May 20,2015.</span>
 						</div>
 						<p>At vero eos et accusamus et iusto odio dignissimos....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/7.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/7.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a>
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
 							<span>May 20,2015.</span>
 						</div>
 						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
 						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 blog-grid">
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/10.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/10.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a> 
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
 							<span>May 20,2015.</span>
 						</div>
 						<p>At et accusamus et iusto....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/5.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/5.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a> 
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
 							<span>May 20,2015.</span>
 						</div>
 						<p>At vero eos et accusamus et iusto odio dignissimos ducimus
 						molestias excepturi sint occaecati cupiditate....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-3 blog-grid">
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/4.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/4.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a>
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a>
 							<span>May 20,2015.</span>
 						</div>
 						<p>At et accusamus et iusto excepturi sint occaecati cupiditate....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../images/6.jpg" alt=" " /></a>
+					<a href="paquetes/paquete/paquete.php"><img src="../images/6.jpg" alt=" " /></a>
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="single.html">Nam libero tempore, cum soluta nobis est eligendi</a> 
+							<a href="paquetes/paquete/paquete.php">Nam libero tempore, cum soluta nobis est eligendi</a> 
 							<span>May 20,2015.</span>
 						</div>
 						<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui 
 						blanditiis et quas molestias excepturi sint occaecati cupiditate....</p>
 						<div class="red-mre">
-							<a href="single.html">Read More</a> 
+							<a href="paquetes/paquete/paquete.php">Read More</a> 
 						</div>
 					</div>
 				</div>
@@ -246,7 +246,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="single.html">Read More</a>
+					<a href="paquetes/paquete/paquete.php">Read More</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">

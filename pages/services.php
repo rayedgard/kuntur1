@@ -46,7 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">
+					<a href="index.php">
 					<img src="../images/kuntur.png">
 
 					</a>
@@ -54,13 +54,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 					<ul class="nav1">
-						<li><a href="../index.html">HOME</a></li>
-						<li><a href="about.html">ABOUT</a></li>
-						<li><a href="events.html">EVENTS</a></li>
-						<li class="cap"><a href="services.html">SERVICES</a></li>
-						<li><a href="gallery.html">GALLERIES</a></li>
-						<li><a href="blog.html">BLOG</a></li>
-						<li><a href="contact.html">CONTACT</a></li>
+						<li><a href="../index.php">HOME</a></li>
+						<li><a href="about.php">ABOUT</a></li>
+						<li><a href="events.php">EVENTS</a></li>
+						<li class="cap"><a href="services.php">SERVICES</a></li>
+						<li><a href="gallery.php">GALLERIES</a></li>
+						<li><a href="blog.php">BLOG</a></li>
+						<li><a href="contact.php">CONTACT</a></li>
 					</ul>
 					<!-- script for menu -->
 						<script> 
@@ -86,7 +86,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<h3>4<span>0</span>4</h3>
 					<p>Oops!! Page not found!!</p>
 					<p>Please try one of the following pages...</p>
-					<a class="hvr-rectangle-out button" href="index.html">HOME PAGE</a>
+					<a class="hvr-rectangle-out button" href="../index.php">HOME PAGE</a>
 				</div>
 		</div>
 	</div>
@@ -104,7 +104,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="single.html">Read More</a>
+					<a href="paquetes/paquete.php">Read More</a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
