@@ -115,27 +115,33 @@ a, button {
 /* Adding some background color to the different menu items */
 
 .nav li:nth-child(6n+1) {
-	background: rgb(22, 145, 190);
+	background: rgb(251, 120, 6);
+	
 }
 
 .nav li:nth-child(6n+2) {
-	background: rgb(22, 107, 162);
+
+	background: rgb(254, 84, 0);
 }
 
 .nav li:nth-child(6n+3) {
-	background: rgb(22, 145, 190);
+	background: rgb(251, 120, 6);
+	
 }
 
 .nav li:nth-child(6n+4) {
-	background: rgb(22, 107, 162);
+
+	background: rgb(254, 84, 0);
 }
 
 .nav li:nth-child(6n+5) {
-	background: rgb(22, 145, 190);
+	background: rgb(251, 120, 6);
+	
 }
 
 .nav li:nth-child(6n+6) {
-	background: rgb(22, 107, 162);
+
+	background: rgb(254, 84, 0);
 }
 
 /* For screen bigger than 800px */
@@ -162,37 +168,37 @@ a, button {
 	.no-touch .nav li:nth-child(6n+1) a:hover,
 	.no-touch .nav li:nth-child(6n+1) a:active,
 	.no-touch .nav li:nth-child(6n+1) a:focus {
-		border-bottom: 4px solid rgb(12, 110, 149);
+		border-bottom: 4px solid  rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+2) a:hover,
 	.no-touch .nav li:nth-child(6n+2) a:active,
 	.no-touch .nav li:nth-child(6n+2) a:focus {
-		border-bottom: 4px solid  rgb(10, 75, 117);
+		border-bottom: 4px solid  rgb(254, 84, 0);
 	}
 
 	.no-touch .nav li:nth-child(6n+3) a:hover,
 	.no-touch .nav li:nth-child(6n+3) a:active,
 	.no-touch .nav li:nth-child(6n+3) a:focus {
-		border-bottom: 4px solid rgb(12, 110, 149);
+		border-bottom: 4px solid  rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+4) a:hover,
 	.no-touch .nav li:nth-child(6n+4) a:active,
 	.no-touch .nav li:nth-child(6n+4) a:focus {
-		border-bottom: 4px solid rgb(10, 75, 117);
+		border-bottom: 4px solid rgb(254, 84, 0);
 	}
 
 	.no-touch .nav li:nth-child(6n+5) a:hover,
 	.no-touch .nav li:nth-child(6n+5) a:active,
 	.no-touch .nav li:nth-child(6n+5) a:focus {
-		border-bottom: 4px solid rgb(12, 110, 149);
+		border-bottom: 4px solid  rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+6) a:hover,
 	.no-touch .nav li:nth-child(6n+6) a:active,
 	.no-touch .nav li:nth-child(6n+6) a:focus {
-		border-bottom: 4px solid rgb(10, 75, 117);
+		border-bottom: 4px solid rgb(254, 84, 0);
 	}
 
 	/* Placing the icon */
@@ -284,37 +290,37 @@ a, button {
 	.no-touch .nav ul li:nth-child(6n+1) a:hover,
 	.no-touch .nav ul li:nth-child(6n+1) a:active,
 	.no-touch .nav ul li:nth-child(6n+1) a:focus {
-		background:rgb(44, 168, 219);
+		background:rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+2) a:hover,
 	.no-touch .nav li:nth-child(6n+2) a:active,
 	.no-touch .nav li:nth-child(6n+2) a:focus {
-		background: rgb(31, 120, 176);
+		background: rgb(254, 84, 0);
 	}
 
 	.no-touch .nav li:nth-child(6n+3) a:hover,
 	.no-touch .nav li:nth-child(6n+3) a:active,
 	.no-touch .nav li:nth-child(6n+3) a:focus {
-		background: rgb(44, 168, 219);
+		background:rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+4) a:hover,
 	.no-touch .nav li:nth-child(6n+4) a:active,
 	.no-touch .nav li:nth-child(6n+4) a:focus {
-		background: rgb(31, 120, 176);
+		background: rgb(254, 84, 0);
 	}
 
 	.no-touch .nav li:nth-child(6n+5) a:hover,
 	.no-touch .nav li:nth-child(6n+5) a:active,
 	.no-touch .nav li:nth-child(6n+5) a:focus {
-		background: rgb(44, 168, 219);
+		background: rgb(251, 120, 6);
 	}
 
 	.no-touch .nav li:nth-child(6n+6) a:hover,
 	.no-touch .nav li:nth-child(6n+6) a:active,
 	.no-touch .nav li:nth-child(6n+6) a:focus {
-		background: rgb(31, 120, 176);
+		background: rgb(254, 84, 0);
 	}
 
 	.nav ul li {
@@ -476,26 +482,26 @@ a, button {
 	
 	/* Adding a left border of 8 px with a different color for each menu item*/
 	.nav li:nth-child(6n+1) {
-		border-left: 8px solid rgb(13, 111, 150);
+		border-left: 8px solid rgb(251, 120, 6);
 
 	.nav li:nth-child(6n+2) {
-		border-left: 8px solid rgb(10, 75, 117);
+		border-left: 8px solid rgb(254, 84, 0);
 	}
 
 	.nav li:nth-child(6n+3) {
-		border-left: 8px solid rgb(13, 111, 150);
+		border-left: 8px solid rgb(251, 120, 6);
 	}
 
 	.nav li:nth-child(6n+4) {
-		border-left: 8px solid rgb(10, 75, 117);
+		border-left: 8px solid rgb(254, 84, 0);
 	}
 
 	.nav li:nth-child(6n+5) {
-		border-left: 8px solid rgb(13, 111, 150);
+		border-left: 8px solid rgb(251, 120, 6);
 	}
 
 	.nav li:nth-child(6n+6) {
-		border-left: 8px solid rgb(10, 75, 117);
+		border-left: 8px solid rgb(254, 84, 0);
 	}
 
 	/* make the nav bigger on touch screens */

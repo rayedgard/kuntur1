@@ -59,6 +59,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" type="text/css" href="../menucssjs/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="../menucssjs/css/component.css" />
 		<script src="../menucssjs/js/modernizr.custom.js"></script>
+			<script>
+			//  The function to change the class
+			var changeClass = function (r,className1,className2) {
+				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
+				if( regex.test(r.className) ) {
+					r.className = r.className.replace(regex,' '+className2+' ');
+			    }
+			    else{
+					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
+			    }
+			    return r.className;
+			};	
+
+			//  Creating our button in JS for smaller screens
+			var menuElements = document.getElementById('menu');
+			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
+
+			//  Toggle the class on click to show / hide the menu
+			document.getElementById('menutoggle').onclick = function() {
+				changeClass(this, 'navtoogle active', 'navtoogle');
+			}
+
+			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
+			document.onclick = function(e) {
+				var mobileButton = document.getElementById('menutoggle'),
+					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
+
+				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
+					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
+				}
+			}
+			</script>
 </head>
 	
 <body>
@@ -73,6 +105,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 include_once("../conexion.php");
 	$link = Conectarse();
+	$id = $_GET['cod'];
+	if($id<=0)
+	{ $id=1;}	
+
 
 	//Codigo para discriminar el idioma
 
@@ -127,6 +163,43 @@ include_once("../conexion.php");
 
 	}
 	//fin discriminacion de idiom
+		// consulta para realizar el modificado de la tabla
+			$consulta = mysql_query("SELECT nombreCategoria FROM categoriafotos WHERE idCategoriaFoto ='$id'",$link);
+			$row = mysql_fetch_array($consulta);
+
+
+
+
+
+
+			//conuslta para paquetes aleatorios
+			$fotos ="SELECT  nombreFoto FROM fotos WHERE idCategoriafoto='$id' ORDER BY RAND()"; 
+			$rfotos = mysql_query($fotos,$link);
+		
+			//nombre del titulo
+			$nombrefoto=array();
+
+			while($row2 = mysql_fetch_array($rfotos))
+			{
+				array_push($nombrefoto,$row2[0]);
+			}
+	
+
+
+
+				 	//conuslta para las categoria de fotos
+			$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos ORDER BY RAND()"; 
+			$cat = mysql_query($catego,$link);
+	
+			//nombre del titulo
+			$idcat=array();
+			$nombres=array();
+
+			while($row1 = mysql_fetch_array($cat))
+			{
+				array_push($idcat,$row1[0]);	
+				array_push($nombres,$row1[1]);
+			}
 ?>
 
 	<div class="banner-with-text1">
@@ -186,11 +259,11 @@ include_once("../conexion.php");
 <div class="banner-bdy gal">
    <div class="container">
 	<div class="gallery">
+
 		<h3>Multimedia</h3>
 		<p class="gal-txt"><?php echo $descripcion; ?>.</p>
 
-
-		    <div class="container">	
+		 <div class="container">	
 	    <div class="main clearfix" >
 
 				<nav id="menu" class="nav">	
@@ -199,43 +272,7 @@ include_once("../conexion.php");
 				 	<?php
 
 
-			// consulta para realizar el modificado de la tabla
-			$consulta = mysql_query("SELECT nombreCategoria FROM categoriafotos WHERE idCategoriaFoto ='$id'",$link);
-			$row = mysql_fetch_array($consulta);
-
-
-
-
-
-
-			//conuslta para paquetes aleatorios
-			$fotos ="SELECT  nombreFoto FROM fotos WHERE idCategoriafoto='$id' ORDER BY RAND()"; 
-			$rfotos = mysql_query($fotos,$link);
 		
-			//nombre del titulo
-			$nombrefoto=array();
-
-			while($row2 = mysql_fetch_array($rfotos))
-			{
-				array_push($nombrefoto,$row2[0]);
-			}
-	
-
-
-
-				 	//conuslta para las categoria de fotos
-			$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos ORDER BY RAND()"; 
-			$cat = mysql_query($catego,$link);
-	
-			//nombre del titulo
-			$idcat=array();
-			$nombres=array();
-
-			while($row1 = mysql_fetch_array($cat))
-			{
-				array_push($idcat,$row1[0]);	
-				array_push($nombres,$row1[1]);
-			}
 	
 
 
@@ -262,38 +299,7 @@ include_once("../conexion.php");
 
 
 
-			<script>
-			//  The function to change the class
-			var changeClass = function (r,className1,className2) {
-				var regex = new RegExp("(?:^|\\s+)" + className1 + "(?:\\s+|$)");
-				if( regex.test(r.className) ) {
-					r.className = r.className.replace(regex,' '+className2+' ');
-			    }
-			    else{
-					r.className = r.className.replace(new RegExp("(?:^|\\s+)" + className2 + "(?:\\s+|$)"),' '+className1+' ');
-			    }
-			    return r.className;
-			};	
-
-			//  Creating our button in JS for smaller screens
-			var menuElements = document.getElementById('menu');
-			menuElements.insertAdjacentHTML('afterBegin','<button type="button" id="menutoggle" class="navtoogle" aria-hidden="true"><i aria-hidden="true" class="icon-menu"> </i> Menu</button>');
-
-			//  Toggle the class on click to show / hide the menu
-			document.getElementById('menutoggle').onclick = function() {
-				changeClass(this, 'navtoogle active', 'navtoogle');
-			}
-
-			// http://tympanus.net/codrops/2013/05/08/responsive-retina-ready-menu/comment-page-2/#comment-438918
-			document.onclick = function(e) {
-				var mobileButton = document.getElementById('menutoggle'),
-					buttonStyle =  mobileButton.currentStyle ? mobileButton.currentStyle.display : getComputedStyle(mobileButton, null).display;
-
-				if(buttonStyle === 'block' && e.target !== mobileButton && new RegExp(' ' + 'active' + ' ').test(' ' + mobileButton.className + ' ')) {
-					changeClass(mobileButton, 'navtoogle active', 'navtoogle');
-				}
-			}
-		</script>
+		
 
 
 
@@ -303,72 +309,73 @@ include_once("../conexion.php");
 
 			<h3 style="text-align:center; font-size:25px;"><?php echo $row[0]; ?></h3>
 			</br>
-    	<div class="gallery-grids"><!--para las fotos-->
+
+    			<div class="gallery-grids"><!--para las fotos-->
+
+	
+
     	
+					<?php
+		     		   for($j=0;$j<count($nombrefoto);$j++)
+						{
 
-			<div class="gallery-grid">
-		    	<?php
-		        for($j=0;$j<count($nombres);$j++)
-				{
-		        ?>
-		          	
-		        	   	<a class="fancybox" href="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>" data-fancybox-group="gallery"> <img src="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>"class="img-style row6">
-		        	   	<span> </span>
-		           		</a>
+							if($j%2=='0')
+							{
+								?>
+								
+								<div class="gallery-grid">
+								<a class="fancybox" href="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>" data-fancybox-group="gallery"> 
+		        	   			<img                 src="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>" class="img-style row6">
+		        	   			<span> </span>
+		           				</a>
+		           				</div>
+
+
+		           				<?php
+
+		           				}
+		           				if($j%2=='1')
+		           				{
+
+		           					?>	    
+		           				
+							<div class="gallery-grid1">
+		        	   		<a class="fancybox" href="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>" data-fancybox-group="gallery"> 
+		        	   		<img                 src="../administracion/imagenes/fotos/<?php echo $row[0]; ?>/<?php echo $nombrefoto[$j]; ?>" class="img-style row6">
+		        	   		<span> </span>
+		           			</a>
+		           			</div>
+
+		           			<?php
+		           				}
+		           			}
+		           			?>
+		           			
+		           
+
+		       
+		           		
+
+
+
 		             
-		         <?php  } ?>
-			</div> 
+		         	 
+					</div> 
 
-
-			<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-			</script>
-
-			<script src="../js/jquery.lightbox.js">
-			</script>
-
-			<script>
-			  // Initiate Lightbox
-			  $(function() {
-			    $('.gallery a').lightbox(); 
-			  });
-			</script>
-
-    	</div>  
+    			</div>  
 
 		
 
 
 
-		<div class="gallery-grids">
-
-			<div class="gallery-grid">
-				 <a class="fancybox" href="../images/6-.jpg&i=<?php echo $i;?>" data-fancybox-group="gallery"><img src="../images/6.jpg" class="img-style row6" alt=""><span> </span></a>					
+				</div>
 			</div>
-
-
-			<div class="gallery-grid1">
-				<a class="fancybox" href="../images/8-.jpg&i=<?php echo $i;?>" data-fancybox-group="gallery"><img src="../images/8.jpg" class="img-style row6" alt=""><span> </span></a>
-			</div>
-
-
-			<div class="gallery-grid">
-				<a class="fancybox" href="../images/5-.jpg&i=<?php echo $i;?>" data-fancybox-group="gallery"><img src="../images/5.jpg" class="img-style row6" alt=""><span> </span></a>
-			</div>
-			<div class="gallery-grid1">
-				<a class="fancybox" href="../images/9-.jpg&i=<?php echo $i;?>" data-fancybox-group="gallery"><img src="../images/9.jpg" class="img-style row6" alt=""><span> </span></a>
-			</div>
-			<div class="gallery-grid">
-				<a class="fancybox" href="../images/10-.jpg&i=<?php echo $i;?>" data-fancybox-group="gallery"><img src="../images/10.jpg" class="img-style row6" alt=""><span> </span></a>
-			</div>
-			<div class="clearfix"> </div>
 		</div>
 
 
 
 
-	</div>
-	</div>
-	</div>
+		
 <!-- //gallery -->
 <!-- footer -->
 	<div class="footer-top">
@@ -417,6 +424,18 @@ include_once("../conexion.php");
 			</div>
 			<div class="col-md-4 footer-top-grid">
 				<h3><?php echo $titulo4; ?></h3>
+
+
+							<?php 
+
+					for ($q=0; $q < 2; $q++) { 
+						# code...
+						$resultado = $q % 2;
+						echo $resultado;
+					}
+
+
+				?>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

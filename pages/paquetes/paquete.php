@@ -54,29 +54,121 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	
 <body>
+    <a class='flotanteE' href='paquete.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='paquete.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+
+
+<?php 
+
+
+include_once("../../conexion.php");
+	$link = Conectarse();
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="MORE INFO";
+		$boton1="MORE";
+		$reservas="RESERVE";
+		//descripcion
+		$descripcion="Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.";
+		//titulos
+		$titulo1="OTHERS PACKAGES";
+		$titulo5="ARCHIEVES";
+		$titulo6="ASSOCIATED DESTINATIONS";
+		$titulo7="COMMENTS";
+		
+		
+
+		//footer
+		$titulo2="About Eco Travel";
+		$titulo3="Connect With Us";
+		$titulo4="Extra Features";
+		
+
+	}
+
+
+	if($i==0)
+	{
+		//botones
+		$boton="MÁS INFO...";
+		$boton1="MÁS";
+		$reservas="RESERVAR";
+		//descripcion
+		$descripcion="cuando nuestro poder de elección es sin trabas y cuando nada impide que seamos capaces de hacer lo que es más agradable a, todo placer es de agradecer y cada dolor evitado.";
+			//titulos
+		$titulo1="OTROS PAQUETES";
+		$titulo5="ARCHIVOS";
+		$titulo6="DESTINOS RELACIONADOS";
+		$titulo7="COMENTARIOS";
+		
+		
+	
+			//footer
+		$titulo2="Acerca de Kuntur Travel";
+		$titulo3="Redes Sociales";
+		$titulo4="Caracteristicas Extras";
+	
+
+	}
+	//fin discriminacion de idiom
+?>
+
 <div class="banner-with-text1">
 	<div class="container">
 <!-- header -->	
 		<div class="header">
-			<div class="header-top">
-				<input type="text" placeholder="Search" required=" ">
-			</div>
+			
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">Eco<span>travel</span></a>
+					<a href="../../index.php&i=<?php echo $i;?>">
+						<img src="../../images/kuntur.png">
+					</a>
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
-					<ul class="nav1">
-							<li class="cap"><a href="../../index.php">INICIO</a></li>
-						
-						<li><a href="../events.php">QUIENES SOMOS</a></li>
-						
-						<li><a href="../gallery.php">MULTIMEDIA</a></li>
-						<li><a href="../blog.php">PAQUETES</a></li>
-						<li><a href="../contact.php">CONTACTOS</a></li>
-					</ul>
+
+
+				<?php  if($i=='1'){echo ' 	
+							<ul class="nav1">
+								<li ><a href="../../index.php?i='.$i.'">HOME</a></li>
+								<li ><a href="../events.php?i='.$i.'">ABOUT US</a></li>
+								<li><a href="../gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="../contact.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li ><a href="../../index.php?i='.$i.'">INICIO</a></li>
+								<li ><a href="../events.php?i='.$i.'">QUIENES SOMOS</a></li>
+								<li><a href="../gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="../contact.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
+
+
+
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -103,8 +195,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <?php
 
-include_once("../../conexion.php");
-$link = Conectarse();
 $id = $_GET['cod'];
 
 //Consulta para listar el paquete correspondiente
@@ -159,7 +249,7 @@ $row = mysql_fetch_array($paquetelista);
 
 
 					<div class="com">
-						<h3>Comments</h3>
+						<h3><?php echo $titulo7; ?></h3>
 
 						<div id="fb-root"></div>
 						<script>(function(d, s, id) {
@@ -246,17 +336,16 @@ $row = mysql_fetch_array($paquetelista);
 
 
 			</div>
+
+
 			<div class="col-md-4 sing-img-text-left">
 				<div class="blog-right1">
-					<div class="search">
-						<h3>NEWSLETTER</h3>
-						<form>
-							<input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
-							<input type="submit" value="Subscribe">
-						</form>
-					</div>
+				<div>
+					</br>
+					</br>
+				</div>
 					<div class="categories">
-						<h3>OTROS PAQUETES</h3>
+						<h3><?php echo $titulo1?></h3>
 
 						<?php 
 							$consultaPaqueteAleatorio = "SELECT idPaquete, nombrePaquete, imagen, costo FROM paquetes WHERE eliminar='0' ORDER BY RAND()";
@@ -289,7 +378,7 @@ $row = mysql_fetch_array($paquetelista);
 						?>
 							
 						
-							<li><a href="#"><?php echo $nombrePaqueteAl[$x]; ?></a></li>	
+							<li><a href="paquete.php?cod=<?php echo $idPaqueteAl[$x];?>&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$x]; ?></a></li>	
 
 					<?php } ?>
 
@@ -300,7 +389,7 @@ $row = mysql_fetch_array($paquetelista);
 
 					</div>
 					<div class="categories categories-mid">
-						<h3>Archieves</h3>
+						<h3><?php echo $titulo5?></h3>
 						<ul>
 							<li><a href="#">May 20,2009</a></li>
 							<li><a href="#">July 31,2010</a></li>
@@ -311,7 +400,7 @@ $row = mysql_fetch_array($paquetelista);
 						</ul>
 					</div>
 					<div class="related-posts">
-						<h3>DESTINOS RELACIONADOS</h3>
+						<h3><?php echo $titulo6?></h3>
 
 
 						<?php
@@ -358,54 +447,38 @@ $row = mysql_fetch_array($paquetelista);
 				
                          <?php } ?>
 
-
-
-
-						
-
-
-
-
-
-
 			
 
 
 					</div>
 				</div>
 			</div>
+
+
 			<div class="clearfix"> </div>
-			<div class="leave-a-comment">
-				<h3>Leave your comment Here</h3> 
-				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
-					<input type="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone Number';}" required="">
-					<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}" required="">Type Your Comment here...</textarea>
-					<input type="submit" value="Add Comment">
-				</form>
-			</div>
+		
 		</div>
 		</div>
 	</div>
 <!-- //single -->
 <!-- footer -->
 	<div class="footer-top">
-	<div class="container">
+
+<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>Acerca de Kuntur Travel</h3>
+				<h3><?php echo $titulo2; ?></h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="../paquetes/paquete/paquete.php">Read More</a>
+					<a href="paquete.php&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Redes Sociales</h3>
+				<h3><?php echo $titulo3; ?></h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -435,7 +508,7 @@ $row = mysql_fetch_array($paquetelista);
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Caracteristicas Extras</h3>
+				<h3><?php echo $titulo4; ?></h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>
@@ -448,6 +521,8 @@ $row = mysql_fetch_array($paquetelista);
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+
+
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>

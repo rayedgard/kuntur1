@@ -204,7 +204,7 @@ include_once("../conexion.php");
 		}
 
 
-		for ($i=0; $i <count($idPaqueteAl) ; $i++) /*Tiene que generar 4*/
+		for ($r=0; $r <count($idPaqueteAl) ; $r++) /*Tiene que generar 4*/
 		 { ?>
 
 			
@@ -213,17 +213,17 @@ include_once("../conexion.php");
 			
 					
 				<div class="blog-grid1">
-					<a href="single.php&i=<?php echo $i;?>"><img src="../administracion/imagenes/paquetes/<?php echo $imagenAl[$i]; ?>" alt=" " /></a> <!--IMAGEN -->
+					<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$r];?>&i=<?php echo $i;?>"><img src="../administracion/imagenes/paquetes/<?php echo $imagenAl[$r]; ?>" alt=" " /></a> <!--IMAGEN -->
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$i];  ?></a> <!--NOMBRE-->
-								<span><?php echo $titulo;?>: S/. <?php echo $costoAl[$i];  ?></span> <!--COSTO -->
+							<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$r];?>&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$r];  ?></a> <!--NOMBRE-->
+								<span><?php echo $titulo;?>: S/. <?php echo $costoAl[$r];  ?></span> <!--COSTO -->
 						</div>
 						<p><?php echo substr(strip_tags($descripcionAl[$i]),0,26)."..."; ?></p> <!--PARRAFO -->
 
 
 						<div class="red-mre">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo $boton;?></a> 
+							<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$r];?>&i=<?php echo $i;?>"><?php echo $boton;?></a> 
 						</div>
 					</div>
 				</div>	
@@ -258,6 +258,8 @@ include_once("../conexion.php");
 <!-- //blog -->
 <!-- footer -->
 	<div class="footer-top">
+
+	
 <div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
@@ -315,6 +317,9 @@ include_once("../conexion.php");
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+
+
+
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>

@@ -3048,3 +3048,13 @@ ul.last1 li{
   box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
 }
 /*--- fin iconos de idioma-----*/
+
+.nav li:nth-child(6n+1) {
+	background: rgb(251, 120, 6);	
+	background: rgb(255, 108, 0);
+	background: rgb(217, 107, 33);
+	background:#FE5400; 
+	background:#D96B21; 
+	background:#FE5400; 
+
+}
