@@ -52,6 +52,70 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
+  <a class='flotanteE' href='blog.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='blog.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+<?php 
+
+
+include_once("../conexion.php");
+	$link = Conectarse();
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="READ MORE";
+		$boton1="MORE";
+		$reservas="RESERVE";
+		//descripcion
+		$descripcion="Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.";
+		//titulos
+		$titulo1="PACKAGES";
+		$titulo="Price";
+
+		//paquetes
+		
+
+		//footer
+		$titulo2="About Eco Travel";
+		$titulo3="Connect With Us";
+		$titulo4="Extra Features";
+	
+
+	}
+	if($i==0)
+	{
+		//botones
+		$boton="LEER MÁS";
+		$boton1="MÁS";
+		$reservas="RESERVAR";
+		//descripcion
+		$descripcion="cuando nuestro poder de elección es sin trabas y cuando nada impide que seamos capaces de hacer lo que es más agradable a, todo placer es de agradecer y cada dolor evitado.";
+			//titulos
+		$titulo1="PAQUETES";
+		$titulo="Precio";
+	
+			//footer
+		$titulo2="Acerca de Kuntur Travel";
+		$titulo3="Redes Sociales";
+		$titulo4="Caracteristicas Extras";
+
+
+	}
+	//fin discriminacion de idiom
+?>
 <div class="banner-with-text1">
 	<div class="container">
 <!-- header -->	
@@ -60,20 +124,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">
+					<a href="../index.php&i=<?php echo $i;?>">
 					<img src="../images/kuntur.png">
 
 					</a>
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
+					<?php  if($i=='1'){echo ' 	
 							<ul class="nav1">
-						<li><a href="../index.php">INICIO</a></li>						
-						<li><a href="events.php">QUIENES SOMOS</a></li>						
-						<li><a href="gallery.php">MULTIMEDIA</a></li>
-						<li class="cap"><a href="blog.php">PAQUETES</a></li>
-						<li><a href="contact.php">CONTACTOS</a></li>
-					</ul>
+								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li><a href="events.php?i='.$i.'">ABOUT US</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li class="cap"><a href="blog.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="contact.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li class="cap"><a href="blog.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -94,10 +172,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="banner-bdy blg">
 	<div class="container">
 	<div class="blog">
-		<h2>Paquetes</h2>
-		<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
-		cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-		omnis voluptas assumenda est, omnis dolor repellendus.</p>
+		<h2><?php echo $titulo1;?></h2>
+		<p class="gal-txt"><?php echo $descripcion; ?>.</p>
 	
 		<div class="blog-grids">
 
@@ -137,17 +213,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			
 					
 				<div class="blog-grid1">
-					<a href="single.html"><img src="../administracion/imagenes/paquetes/<?php echo $imagenAl[$i]; ?>" alt=" " /></a> <!--IMAGEN -->
+					<a href="single.php&i=<?php echo $i;?>"><img src="../administracion/imagenes/paquetes/<?php echo $imagenAl[$i]; ?>" alt=" " /></a> <!--IMAGEN -->
 					<div class="blog-grid1-info">
 						<div class="soluta">
-							<a href="paquetes/paquete.php"><?php echo $nombrePaqueteAl[$i];  ?></a> <!--NOMBRE-->
-								<span>Precio: S/. <?php echo $costoAl[$i];  ?></span> <!--COSTO -->
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$i];  ?></a> <!--NOMBRE-->
+								<span><?php echo $titulo;?>: S/. <?php echo $costoAl[$i];  ?></span> <!--COSTO -->
 						</div>
 						<p><?php echo substr(strip_tags($descripcionAl[$i]),0,26)."..."; ?></p> <!--PARRAFO -->
 
 
 						<div class="red-mre">
-							<a href="paquetes/paquete.php">Read More</a> 
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo $boton;?></a> 
 						</div>
 					</div>
 				</div>	
@@ -182,21 +258,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //blog -->
 <!-- footer -->
 	<div class="footer-top">
-	<div class="container">
+<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>Acerca de Kuntur Travel</h3>
+				<h3><?php echo $titulo2; ?></h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="paquetes/paquete.php">Leer Más</a>
+					<a href="paquetes/paquete.php&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Redes Sociales</h3>
+				<h3><?php echo $titulo3; ?></h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -226,7 +302,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Caracteristicas Extras</h3>
+				<h3><?php echo $titulo4; ?></h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

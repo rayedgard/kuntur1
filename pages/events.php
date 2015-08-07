@@ -52,6 +52,85 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
+?>
+	<!--para los iconos de idioma-->    
+    <a class='flotanteE' href='events.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='events.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+	<!--fin idioma-->
+
+
+
+<?php 
+
+
+include_once("../conexion.php");
+	$link = Conectarse();
+	
+
+
+
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	
+	if($i==1)
+	{
+		//botones
+		$boton="MORE INFO";
+		$boton1="MORE";
+		$reservas="RESERVE";
+		//etiquetas
+		$precio="Cost";
+		//titulos
+		$titulo1="ABOUT US";
+
+		//footer
+		$titulo2="About Eco Travel";
+		$titulo3="Connect With Us";
+		$titulo4="Extra Features";
+		$titulo5="PACKAGES";
+		$titulo6="PACKAGES";
+		$titulo7="PACKAGES";
+		
+	
+	
+
+
+	}
+	if($i==0)
+	{
+		//botones
+		$boton="MÁS INFO...";
+		$boton1="MÁS";
+		$reservas="RESERVAR";
+		//etiquetas
+		$precio="Costo";
+			//titulos
+		$titulo1="QUIENES SOMOS";
+	
+			//footer
+		$titulo2="Acerca de Kuntur Travel";
+		$titulo3="Redes Sociales";
+		$titulo4="Caracteristicas Extras";
+		$titulo5="PACKAGES";
+		$titulo6="PACKAGES";
+		$titulo7="PACKAGES";
+
+	}
+	//fin discriminacion de idiom
+?>
+
+
 <div class="banner-with-text1">
 	<div class="container">
 <!-- header -->	
@@ -60,20 +139,40 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.php">
+					<a href="../index.php&i=<?php echo $i;?>">
 					<img src="../images/kuntur.png">
 
 					</a>
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
-						<ul class="nav1">
-						<li><a href="../index.php">INICIO</a></li>						
-						<li class="cap"><a href="events.php">QUIENES SOMOS</a></li>						
-						<li><a href="gallery.php">MULTIMEDIA</a></li>
-						<li><a href="blog.php">PAQUETES</a></li>
-						<li><a href="contact.php">CONTACTOS</a></li>
-					</ul>
+
+
+
+			<?php  if($i=='1'){echo ' 	
+							<ul class="nav1">
+								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
+								<li class="cap"><a href="events.php?i='.$i.'">ABOUT US</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="contact.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="sf-menu">
+								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
+								<li class="cap"><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
+								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="blog.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
+
+
+
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -94,7 +193,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="banner-bdy eve">
 		<div class="container">
 			<div class="events">
-				<h3>Quienes Somos</h3>
+				<h3><?php echo $titulo1;?></h3>
 				<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
 					cumque nihil impedit quo minus id quod maxime placeat facere possimus,
 					omnis voluptas assumenda est, omnis dolor repellendus.</p>
@@ -103,36 +202,36 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<p class="dte">20 May,2015</p>
 						<img src="../images/3.jpg" alt=" " />
 						<div class="nobis">
-							<a href="paquetes/paquete.php">impedit minus id quod soluta<span> maxime placeat facere</span></a>
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>">impedit minus id quod soluta<span> maxime placeat facere</span></a>
 						</div>
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="paquetes/paquete.php">More Info</a>
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
 						</div>
 					</div>
 					<div class="col-md-4 event-grid">
 						<p class="dte">22 May,2015</p>
 						<img src="../images/4.jpg" alt=" " />
 						<div class="nobis">
-							<a href="single.html">id quod maxime placeat facere <span>maxime eligendi optio</span></a>
+							<a href="single.php&i=<?php echo $i;?>">id quod maxime placeat facere <span>maxime eligendi optio</span></a>
 						</div>
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="paquetes/paquete.php">More Info</a>
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
 						</div>
 					</div>
 					<div class="col-md-4 event-grid">
 						<p class="dte">25 May,2015</p>
 						<img src="../images/5.jpg" alt=" " />
 						<div class="nobis">
-							<a href="paquetes/paquete.php">soluta nobis est eligendi quod <span>placeat facere possimus</span></a>
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>">soluta nobis est eligendi quod <span>placeat facere possimus</span></a>
 						</div>
 						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
 							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
 						<div class="mre-info">
-							<a href="paquetes/paquete.php">More Info</a>
+							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
 						</div>
 					</div>
 					<div class="clearfix"> </div>
@@ -175,21 +274,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- //events -->	
 <!-- footer -->
 	<div class="footer-top">
-	<div class="container">
+
+		<div class="container">
 		<div class="footer-top-grids">
 			<div class="col-md-4 footer-top-grid">
-				<h3>Acerca de Kuntur Travel</h3>
+				<h3><?php echo $titulo2; ?></h3>
 				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
 				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
 				dolores et quas molestias excepturi sint occaecati cupiditate non 
 				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
 				id est laborum et dolorum fuga. </p>
 				<div class="read1">
-					<a href="paquetes/paquete.php">Leer Más</a>
+					<a href="paquetes/paquete.php&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Redes Sociales</h3>
+				<h3><?php echo $titulo3; ?></h3>
 				<div class="twi-txt">
 					<div class="twi">
 						<a href="#" class="twitter"></a>
@@ -219,7 +319,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 			</div>
 			<div class="col-md-4 footer-top-grid">
-				<h3>Caracteristicas Extras</h3>
+				<h3><?php echo $titulo4; ?></h3>
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>
@@ -232,6 +332,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="clearfix"> </div>
 		</div>
 	</div>
+
 		<div class="footer">
 			<p>Copyright © 2015 Eco Travel. All Rights Reserved | Design by<a href="http://w3layouts.com/"> W3layouts</a></p>
 		</div>

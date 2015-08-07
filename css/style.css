@@ -3004,3 +3004,47 @@ ul.last1 li{
     width: 100%;
     z-index: -100;
 }
+
+/*--- para los iconos de idioma-----*/
+
+.flotanteE
+{
+    display:scroll;
+    position:fixed;
+    top:10px;
+    right:0px;
+    z-index: 1200;
+}
+.flotanteI
+{
+    display:scroll;
+    position:fixed;
+    top:60px;
+    right:0px;
+    z-index: 1200;
+}
+
+  
+.flotanteE img:hover {  
+   opacity:1;
+  
+   /*Reflection*/
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+ border-radius: 30px;
+   /*Glow*/
+  -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+.flotanteI img:hover {  
+   opacity:1;
+  
+   /*Reflection*/
+  -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));
+ border-radius: 30px;
+   /*Glow*/
+  -webkit-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  -moz-box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+  box-shadow: 0px 0px 20px rgba(255,255,255,0.8);
+}
+/*--- fin iconos de idioma-----*/
