@@ -52,8 +52,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
-  <a class='flotanteE' href='blog.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='blog.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+  <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 <?php 
 
@@ -143,7 +143,7 @@ include_once("../conexion.php");
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
+							<ul class="nav1">
 								<li><a href="../index.php?i='.$i.'">INICIO</a></li>
 								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>

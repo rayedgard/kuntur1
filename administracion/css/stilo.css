@@ -16,3 +16,32 @@
 	-webkit-border-radius:13px;
 	border-radius:13px;
 }
+.flotante {
+    display:scroll;
+        position:fixed;
+        bottom:320px;
+        right:0px;
+}
+
+
+
+/*-------para las fechas-------------*/
+
+
+input {
+  padding: 5px;
+  width: 240px;
+  max-width: 100%;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: inline-block;
+  width: 25%;
+}
+
+body, input {
+  font-family: sans-serif;
+}
+/*----fin fechas-----*/

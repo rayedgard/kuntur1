@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | About :: w3layouts</title>
+<title>KUNTUR TRAVEL AGENCY</title>
 <link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -20,6 +20,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="Eco Travel Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+
+
+
+
+
+
+
+
+
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -52,6 +62,139 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
+<!--para los iconos de idioma-->  
+
+   
+	<!--fin idioma-->
+
+		 <?php 
+	include_once("../../conexion.php");
+	$link = Conectarse();
+	
+
+	//Codigo para discriminar el idioma
+
+	if( $_GET['i']=='' or $_GET['i']=='1')
+	{
+		$i='1';
+	}
+	else
+	{
+		$i='0';
+	}
+
+	if($i==1)
+	{
+		//botones
+		$boton="Read More";
+	
+		
+		//etiquetas
+		
+		//titulos
+		$titulo1="DESTINATIONS";
+		$titulo2="OTHERS PACKAGES";
+		$titulo3="ASSOCIATED DESTINATIONS";
+		
+
+		
+			//pie de pagina
+		$politicas="PRIVACY POLICIES";
+		$corporativo="CORPORATE MAIL";
+		$diseno="DESIGN";
+	
+
+
+	}
+	if($i==0)
+	{
+	
+		
+		//etiquetas
+		
+			//titulos
+		$titulo1="DESTINOS";
+		$titulo2="OTROS PAQUETES";
+		$titulo3="DESTINOS ASOCIADOS";
+		
+
+	
+
+		
+		//pie de pagina
+		$politicas="POLÍTICAS DE PRIVACIDAD";
+		$corporativo="CORREO COORPORATIVO";
+		$diseno="DISEÑO";
+
+	}
+	//fin discriminacion de idioma
+	$id1= $_GET['cod1'];
+	$id= $_GET['cod'];
+
+
+// consulta para realizar el modificado de la tabla
+$consulta = mysql_query("SELECT nombreDestino, imagenDestino , descripcion FROM destinos WHERE eliminar=0 AND idDestino='$id1'",$link);
+// AND idioma='$i'
+$row = mysql_fetch_array($consulta);
+
+
+
+						   	//conuslta para paquetes aleatorios
+$destinos ="SELECT a.idDestino, a.imagenDestino, a.nombreDestino FROM destinos a 
+INNER JOIN destinosporpaquete b ON a.idDestino=b.idDestino WHERE b.idPaquete='$id' AND eliminar='0' AND a.idioma='$i'  ORDER BY RAND()"; 
+$rdestinos = mysql_query($destinos,$link);
+	
+		//nombre del titulo
+	$idDestino=array();
+	$imagenDestino=array();
+	$nombreDestino=array();
+
+while($row2 = mysql_fetch_array($rdestinos))
+		{
+		array_push($idDestino,$row2[0]);
+		array_push($imagenDestino,$row2[1]);
+		array_push($nombreDestino,$row2[2]);
+		}
+
+
+
+
+
+	//conuslta para paquetes aleatorios
+$paquetesAleatorios ="SELECT idPaquete, nombrePaquete FROM `paquetes` WHERE eliminar='0'  ORDER BY RAND()"; 
+$paquetesAle = mysql_query($paquetesAleatorios,$link);
+	
+		//nombre del titulo
+	$idPaqueteAl=array();
+	$nombrePaqueteAl=array();
+
+while($row2 = mysql_fetch_array($paquetesAle))
+		{
+		array_push($idPaqueteAl,$row2[0]);
+		array_push($nombrePaqueteAl,$row2[1]);
+		}
+
+
+
+
+
+			
+	
+	?>
+	    <!-- You can use open graph tags to customize link previews.
+    Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
+    <meta property="og:url"           content="http://www.kunturtravelagency.com" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="<?php echo $row[0];?>" />
+    <meta property="og:description"   content="<?php echo $row[2]; ?>" />
+    <meta property="og:image"         content="../../administracion/imagenes/destinos/<?php echo $row[1];?>" />
+
+
+	 <a class='flotanteE' href='../../index.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../../index.php?i=1' ><img src='../../images/ing.png' border="0"/></a>  
+
+	
+
 <div class="banner-with-text1">
 	<div class="container">
 <!-- header -->	
@@ -67,13 +210,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
-					<ul class="nav1">
-						<li class="cap"><a href="../../index.php">INICIO</a></li>						
-						<li><a href="../events.php">QUIENES SOMOS</a></li>						
-						<li><a href="../gallery.php">MULTIMEDIA</a></li>
-						<li><a href="../blog.php">PAQUETES</a></li>
-						<li><a href="../contact.php">CONTACTOS</a></li>
-					</ul>
+					<?php  if($i=='1'){echo ' 	
+							<ul class="nav1">
+								<li ><a href="../../index.php?i='.$i.'">HOME</a></li>
+								<li ><a href="../events.php?i='.$i.'">ABOUT US</a></li>
+								<li><a href="../gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">PACKAGES</a></li>
+								<li><a href="../contact.php?i='.$i.'">CONTACTS</a></li>
+                        	</ul>
+                        	';}
+                        	else
+                        	{
+                        		echo ' 	
+							<ul class="nav1">
+								<li ><a href="../../index.php?i='.$i.'">INICIO</a></li>
+								<li ><a href="../events.php?i='.$i.'">QUIENES SOMOS</a></li>
+								<li><a href="../gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li><a href="../blog.php?i='.$i.'">PAQUETES</a></li>
+								<li><a href="../contact.php?i='.$i.'">CONTACTOS</a></li>
+                        	</ul>
+                        	';}
+                        	?>
 					<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
@@ -97,29 +254,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		<div class="content-text">
 			<div class="content-text-bottom">
 				<div class="about-grids">
+
+
 					<div class="col-md-6 about-grid">
-						<img src="../../images/3.jpg" alt=" " />
+						<img src="../../administracion/imagenes/destinos/<?php echo $row[1];?>" alt=" " />
 					</div>
+
+
 					<div class="col-md-6 about-grd">
-						<h4>Proin Dictum Elementum Velit
-							<span>FUSCE EUISMOD CONSEQUAT ANTE</span></h4>
-						<p>Pellentesque venenatis lorem vitae nisl scelerisque dignissim.
-						Sed tristique finibus leo, et sodales tortor venenatis id. Etiam
-						interdum nisi ligula, ultrices molestie augue molestie nec. 
-						Phasellus at est vitae sapien vestibulum convallis ut vel lorem. 
-						Ut mollis elementum dolor eu consequat. Donec et justo tincidunt, 
-						fringilla sem ut, ullamcorper velit. Pellentesque habitant morbi 
-						tristique senectus et netus et malesuada fames ac turpis egestas.
-						Cras tellus odio, posuere quis mi ut, posuere elementum ante. Nulla 
-						ut lacus ac mi euismod elementum.
-						<span>On the other hand, we denounce with righteous indignation and 
-						dislike men who are so beguiled and demoralized by the charms of 
-						pleasure of the moment, so blinded by desire, that they cannot 
-						foresee the pain and trouble that are bound to ensue; and equal 
-						blame belongs to those who fail in their duty through weakness of 
-						will, which is the same as saying through shrinking from toil and pain.</span></p>
+						<h4><?php echo $row[0];?>
+							<span><?php echo $titulo1; ?></span></h4>
+						<p>
+						<span><?php echo $row[2]; ?>.</span></p>
 					</div>
+
+
 					<div class="clearfix"> </div>
+
+
 				</div>
 			</div>
 			<div class="people">
@@ -193,93 +345,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="fig-text1">
 				<div class="col-md-6 fig-text1-right">
-					<h3>Our Advantages</h3>
+					<h3><?php echo $titulo2;?></h3>
+
+
+					 <?php
+			  for($k=0;$k<count($idPaqueteAl);$k++)
+			  {
+			   ?>
+
 					<ul>
-						<li><a href ="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Nulla in purus nibh.</a></li>
-						<li><a href ="#">Cum sociis natoque penatibus et magnis dis parturient montes, 
-								nascetur ridiculus mus.</a></li>
-						<li><a href ="#"> Maecenas tristique orci ac semNullam tortor nulla,
-								sodales quis posuere quis, tristique nec libero.</a></li>
-						<li><a href ="#">Cum sociis natoque penatibus et magnis dis parturient montes, 
-								nascetur ridiculus mus.</a></li>
-						<li><a href ="#"> Maecenas tristique orci ac semNullam tortor nulla,
-								sodales quis posuere quis, tristique nec libero.</a></li>
+						<li><a href="paquete.php?cod=<?php echo $idPaqueteAl[$k];?>&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$k]; ?></a></li>
+									
 					</ul>
+                <?php  } ?>
+
 				</div>
+
+
 				<div class="col-md-6 fig-text1-right">
-					<h3>Our Offers</h3>
+					<h3><?php echo $titulo3;?></h3>
+							 <?php
+			  for($k=0;$k<count($idDestino);$k++)
+			  {
+			   ?>
+
 					<ul>
-						<li><a href ="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Nulla in purus nibh.</a></li>
-						<li><a href ="#">Cum sociis natoque penatibus et magnis dis parturient montes, 
-								nascetur ridiculus mus.</a></li>
-						<li><a href ="#"> Maecenas tristique orci ac semNullam tortor nulla,
-								sodales quis posuere quis, tristique nec libero.</a></li>
-						<li><a href ="#">Cum sociis natoque penatibus et magnis dis parturient montes, 
-								nascetur ridiculus mus.</a></li>
-						<li><a href ="#"> Maecenas tristique orci ac semNullam tortor nulla,
-								sodales quis posuere quis, tristique nec libero.</a></li>
+						<li><a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>&i=<?php echo $i;?>"><?php echo $nombreDestino[$k];?></a></li>						
 					</ul>
+                <?php  } ?>
+
+
 				</div>
+
+
 				<div class="clearfix"> </div>
 			</div>
-		<div class="testimon">
-			<script src="../../js/responsiveslides.min.js"></script>
-				 <script>
-				    // You can also use "$(window).load(function() {"
-				    $(function () {
-				      // Slideshow 4
-				      $("#slider3").responsiveSlides({
-				        auto: true,
-				        pager: false,
-				        nav: true,
-				        speed: 500,
-				        namespace: "callbacks",
-				        before: function () {
-				          $('.events').append("<li>before event fired.</li>");
-				        },
-				        after: function () {
-				          $('.events').append("<li>after event fired.</li>");
-				        }
-				      });
-				
-				    });
-				  </script>
-			<!--//End-slider-script -->
-			<div  id="top" class="callbacks_container wow fadeInUp" data-wow-delay="0.5s">
-				<ul class="rslides" id="slider3">
-					<li>
-						<div class="testimon-info">
-							<h4>Temporibus autem quibusdam et aut officiis debitis necessitatibus
-								<span>saepe eveniet repudiandae</span></h4>
-							<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-							adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore 
-							et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</p>
-						</div>
-					</li>
-					<li>
-						<div class="testimon-info">
-							<h4>Voluptatem autem quibusdam et aut officiis rerum necessitatibus
-								<span>saepe eveniet repudiandae</span></h4>
-							<p>Ipsum porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-							adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore 
-							et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</p>
-						</div>
-					</li>
-					<li>
-						<div class="testimon-info">
-							<h4>Numquam autem quibusdam et aut officiis debitis aut rerum necessitatibus
-								<span>saepe eveniet ut et voluptates repudiandae</span></h4>
-							<p>Ut enim porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, 
-							adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore 
-							et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam.</p>
-						</div>
-					</li>
-				</ul>
-			</div>
-		</div>	
-		</div>
+	
+		
 	</div>
 	</div>
 	</div>

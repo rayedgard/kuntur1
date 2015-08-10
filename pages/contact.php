@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | Contact :: w3layouts</title>
+<title>KUNTUR TRAVEL AGENCY</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -52,8 +52,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
-  <a class='flotanteE' href='contact.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='contact.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+  <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 <?php 
 
@@ -147,7 +147,7 @@ include_once("../conexion.php");
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
 				<div class="header-bottom-left">
-					<a href="index.html">
+					<a href="../index.html">
 					<img src="../images/kuntur.png">
 
 					</a>
@@ -166,7 +166,7 @@ include_once("../conexion.php");
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
+							<ul class="nav1">
 								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
 								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
@@ -213,6 +213,7 @@ include_once("../conexion.php");
 					</div>
 					<div class="col-md-8 contact-form-right">
 						<h4><?php echo $formulario7;?></h4>
+						
 						<form>
 							<input type="text" value="<?php echo $formulario8;?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
 							<input type="email" value="<?php echo $formulario5;?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required="">

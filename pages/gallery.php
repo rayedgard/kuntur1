@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | Gallery :: w3layouts</title>
+<title>KUNTUR TRAVEL AGENCY</title>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -94,8 +94,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
-    <a class='flotanteE' href='gallery.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='gallery.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+    <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 
@@ -218,7 +218,7 @@ include_once("../conexion.php");
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 
-		<?php  if($i=='1'){echo ' 	
+							<?php  if($i=='1'){echo ' 	
 							<ul class="nav1">
 								<li><a href="../index.php?i='.$i.'">HOME</a></li>
 								<li><a href="events.php?i='.$i.'">ABOUT US</a></li>
@@ -230,7 +230,7 @@ include_once("../conexion.php");
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
+							<ul class="nav1">
 								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
 								<li><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li class="cap"><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
@@ -318,8 +318,9 @@ include_once("../conexion.php");
 					<?php
 		     		   for($j=0;$j<count($nombrefoto);$j++)
 						{
-
-							if($j%2=='0')
+							  list($width,$height)= getimagesize("../administracion/imagenes/fotos/$row[0]/$nombrefoto[$j]");
+							  
+							if($width>$height)
 							{
 								?>
 								
@@ -334,7 +335,7 @@ include_once("../conexion.php");
 		           				<?php
 
 		           				}
-		           				if($j%2=='1')
+		           				if($width<$height)
 		           				{
 
 		           					?>	    
@@ -433,9 +434,18 @@ include_once("../conexion.php");
 						$resultado = $q % 2;
 						echo $resultado;
 					}
-
-
 				?>
+
+<?php
+list($ancho, $alto, $tipo, $atributos) = getimagesize("choquequirao-940x270.jpg");
+echo $ancho;
+echo $alto;
+
+?>
+
+
+
+
 				<ul class="last">
 					<li><a href="#">Temporibus autem quibusdam</a></li>
 					<li><a href="#">Et aut officiis debitis aut</a></li>

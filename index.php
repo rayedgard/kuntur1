@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
+<title>KUNTUR TRAVEL AGENCY</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -213,23 +213,28 @@ while($row2 = mysql_fetch_array($paquetesFin))
 		<div class="container">
 <!-- header -->	
 		<div class="header">
+			<div class="header-top">
+				
+			</div>
 			
 			<div class="clearfix"> </div>
 			<div class="header-bottom">
+
 				<div class="header-bottom-left">
 					<a href="index.php&i=<?php echo $i;?>">
 					<img src="images/kuntur.png">
-
-					</a>
+					</a>					
 				</div>
+
+
 				<div class="header-bottom-right">
 					<span class="menu">MENU</span>
 
-					<?php  if($i=='1'){echo ' 	
+						<?php  if($i=='1'){echo ' 	
 							<ul class="nav1">
-								<li class="cap"><a href="index.php?i='.$i.'">HOME</a></li>
+								<li  class="cap"><a href="index.php?i='.$i.'">HOME</a></li>
 								<li><a href="pages/events.php?i='.$i.'">ABOUT US</a></li>
-								<li><a href="pages/gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li ><a href="pages/gallery.php?i='.$i.'">MULTIMEDIA</a></li>
 								<li><a href="pages/blog.php?i='.$i.'">PACKAGES</a></li>
 								<li><a href="pages/contact.php?i='.$i.'">CONTACTS</a></li>
                         	</ul>
@@ -237,19 +242,16 @@ while($row2 = mysql_fetch_array($paquetesFin))
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
-								<li class="cap"><a href="index.php?i='.$i.'">INICIO</a></li>
+							<ul class="nav1">
+								<li class="cap" ><a href="index.php?i='.$i.'">INICIO</a></li>
 								<li><a href="pages/events.php?i='.$i.'">QUIENES SOMOS</a></li>
-								<li><a href="pages/gallery.php?i='.$i.'">MULTIMEDIA</a></li>
+								<li ><a href="pages/gallery.php?i='.$i.'">MULTIMEDIA</a></li>
 								<li><a href="pages/blog.php?i='.$i.'">PAQUETES</a></li>
 								<li><a href="pages/contact.php?i='.$i.'">CONTACTOS</a></li>
                         	</ul>
                         	';}
                         	?>
-
-
-
-					<!-- script for menu -->
+                        	<!-- script for menu -->
 						<script> 
 							$( "span.menu" ).click(function() {
 							$( "ul.nav1" ).slideToggle( 300, function() {
@@ -259,10 +261,18 @@ while($row2 = mysql_fetch_array($paquetesFin))
 						</script>
 					<!-- //script for menu -->
 
+                        
+
+
+
+					
+
 
 				</div>
 				<div class="clearfix"> </div>
+
 			</div>
+
 		</div>	
 <!-- //header -->
 
@@ -372,7 +382,7 @@ while($row2 = mysql_fetch_array($paquetesFin))
 
 
  			  <?php
-			  for($l=0;$l<count($idPaqueteAl);$l++)
+			  for($l=0;$l<2;$l++)
 			  {
 			   ?>
 
@@ -384,25 +394,25 @@ while($row2 = mysql_fetch_array($paquetesFin))
 
 							</a>
 						</div>
+
 						<div class="col-md-8 jumbotron features-left-grid1">
 							<h4><a href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$k];?>&i=<?php echo $i;?>" ><?php echo $nombrePaqueteAl[$l];?></a></h4>
 							<p>
 								
 								<?php echo  strip_tags($descripcionFin[$l]);?>
 							</p>
-							<p><a class="btn read btn-primary btn-lg" href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$l];?>&i=<?php echo $i;?>"  role="button"><?php echo $boton; ?></a></p>
+
+							<p>
+							<a class="btn read btn-primary btn-lg" href="pages/paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$l];?>&i=<?php echo $i;?>"  role="button"><?php echo $boton; ?></a>
+							</p>
+
 						</div>
+
 						<div class="clearfix"> </div>
 					</div>
 
 
 				<?php  } ?>
-
-
-
-			
-
-
 
 
 				</div>

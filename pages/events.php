@@ -52,10 +52,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 	
 <body>
-?>
+
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='events.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='events.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+    <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 
@@ -157,11 +157,13 @@ include_once("../conexion.php");
 								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
 								<li><a href="contact.php?i='.$i.'">CONTACTS</a></li>
                         	</ul>
+							
+
                         	';}
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
+							<ul class="nav1">
 								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
 								<li class="cap"><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
@@ -198,46 +200,10 @@ include_once("../conexion.php");
 					cumque nihil impedit quo minus id quod maxime placeat facere possimus,
 					omnis voluptas assumenda est, omnis dolor repellendus.</p>
 				<div class="event-grids">
-					<div class="col-md-4 event-grid">
-						<p class="dte">20 May,2015</p>
-						<img src="../images/3.jpg" alt=" " />
-						<div class="nobis">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>">impedit minus id quod soluta<span> maxime placeat facere</span></a>
-						</div>
-						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
-							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-						<div class="mre-info">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
-						</div>
-					</div>
-					<div class="col-md-4 event-grid">
-						<p class="dte">22 May,2015</p>
-						<img src="../images/4.jpg" alt=" " />
-						<div class="nobis">
-							<a href="single.php&i=<?php echo $i;?>">id quod maxime placeat facere <span>maxime eligendi optio</span></a>
-						</div>
-						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
-							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-						<div class="mre-info">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
-						</div>
-					</div>
-					<div class="col-md-4 event-grid">
-						<p class="dte">25 May,2015</p>
-						<img src="../images/5.jpg" alt=" " />
-						<div class="nobis">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>">soluta nobis est eligendi quod <span>placeat facere possimus</span></a>
-						</div>
-						<p class="quod">Nam libero tempore, cum soluta nobis est eligendi optio 
-							cumque nihil impedit quo minus id quod maxime placeat facere possimus.</p>
-						<div class="mre-info">
-							<a href="paquetes/paquete.php&i=<?php echo $i;?>"><?php echo  $boton;?></a>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
+					
+				
 				<div class="featured-events">
-					<h4>Featured Events</h4>
+					<h4>Kuntur Travel</h4>
 					<div class="col-md-8 featured-events-left">
 						<h5>Nam libero tempore, cum soluta nobis est eligendi optio dignissimos 
 							<span>cumque nihil impedit quo minus id quod maxime placeat</span></h5>

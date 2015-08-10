@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html>
 <head>
-<title>Eco Travel a Travel Agency Category Flat Bootstarp Resposive Website Template | Single :: w3layouts</title>
+<title>KUNTUR TRAVEL AGENCY</title>
 <link href="../../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -54,8 +54,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 	
 <body>
-    <a class='flotanteE' href='paquete.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='paquete.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
+    <a class='flotanteE' href='../../index.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
+    <a class='flotanteI' href='../../index.php?i=1' ><img src='../../images/ing.png' border="0"/></a>
 	<!--fin idioma-->
 
 
@@ -157,7 +157,7 @@ include_once("../../conexion.php");
                         	else
                         	{
                         		echo ' 	
-							<ul class="sf-menu">
+							<ul class="nav1">
 								<li ><a href="../../index.php?i='.$i.'">INICIO</a></li>
 								<li ><a href="../events.php?i='.$i.'">QUIENES SOMOS</a></li>
 								<li><a href="../gallery.php?i='.$i.'">MULTIMEDIA</a></li>
@@ -243,8 +243,10 @@ $row = mysql_fetch_array($paquetelista);
 						</ul>
 					</div>
 					
-					<div class="fb-like"></div></br>
-					<div class="fb-share-button" data-href="http://tours.itdecsa.com/pages/paquetes/paquete.php?cod=5" data-layout="button_count"></div>
+					
+					<div class="fb-share-button" data-href="http://www.kunturtravelagency.com/tours-cusco/choquequirao-trek-5days-4nights-3-e.html" data-layout="button_count"></div></br>
+					
+					<div class="fb-page" data-href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline" data-width="360" data-height="180" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline"><a href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline">Lobo Cruz</a></blockquote></div></div>
 
 
 
@@ -259,6 +261,9 @@ $row = mysql_fetch_array($paquetelista);
   						js.src = "//connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v2.4";
 						  fjs.parentNode.insertBefore(js, fjs);
 						}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
 
 						<div class="fb-comments" data-href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?fref=ts" data-numposts="5"></div></br>
 
@@ -431,11 +436,11 @@ $row = mysql_fetch_array($paquetelista);
 				       	<div class="related-post">
 
 							<div class="related-post-left">
-								<a href="destino.php?cod=<?php echo $idDestino[$k];?>"><img src="../../administracion/imagenes/destinos/<?php echo $imagenDestino[$k];?>" alt=" " /></a>
+								<a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>&i=<?php echo $i;?>"><img src="../../administracion/imagenes/destinos/<?php echo $imagenDestino[$k];?>" alt=" " /></a>
 							</div>
 
 							<div class="related-post-right">
-								<h4><a href="destino.php"><?php echo $nombreDestino[$k]; ?></a></h4>
+								<h4><a href="destino.php?cod=<?php echo $id; ?>&cod1=<?php echo $idDestino[$k]; ?>&i=<?php echo $i;?>"><?php echo $nombreDestino[$k]; ?></a></h4>
 								<p>
 									<span><?php echo substr(strip_tags($descripcionDestino[$k]),0,50)."..."; ?></span>
 								</p>
