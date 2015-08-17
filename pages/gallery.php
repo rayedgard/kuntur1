@@ -8,6 +8,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>KUNTUR TRAVEL AGENCY</title>
+
+
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -56,9 +58,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <!-- pop-up -->
 
-<link rel="stylesheet" type="text/css" href="../menucssjs/css/default.css" />
+		<link rel="stylesheet" type="text/css" href="../menucssjs/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="../menucssjs/css/component.css" />
+
+
 		<script src="../menucssjs/js/modernizr.custom.js"></script>
+
 			<script>
 			//  The function to change the class
 			var changeClass = function (r,className1,className2) {
@@ -188,7 +193,7 @@ include_once("../conexion.php");
 
 
 				 	//conuslta para las categoria de fotos
-			$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos ORDER BY RAND()"; 
+			$catego ="SELECT  idCategoriaFoto, nombreCategoria FROM categoriafotos where eliminar='0' ORDER BY RAND()"; 
 			$cat = mysql_query($catego,$link);
 	
 			//nombre del titulo
@@ -258,23 +263,22 @@ include_once("../conexion.php");
 <!-- gallery -->
 <div class="banner-bdy gal">
    <div class="container">
-	<div class="gallery">
+	<div class="gallery" >
 
 		<h3>Multimedia</h3>
-		<p class="gal-txt"><?php echo $descripcion; ?>.</p>
+		<p class="gal-txt"><?php echo $descripcion; ?>.</p> 
 
-		 <div class="container">	
-	    <div class="main clearfix" >
 
-				<nav id="menu" class="nav">	
+
+
+
+		 <div class="container1" style="align:center; width:100%;font-size: 8px; padding: 0; margin: 0;font-family: 'Lato', Calibri, Arial, sans-serif;" >	
+	    <div class="main1 clearfix1" >
+
+				<nav id="menu" class="nav" style="width=100%; text-align:center">	
 
 					<ul>
 				 	<?php
-
-
-		
-	
-
 
 						for($k=0;$k<count($nombres);$k++)
 						{
@@ -282,7 +286,7 @@ include_once("../conexion.php");
 							<li>
 								<a href="gallery.php?cod=<?php echo $idcat[$k];?>&i=<?php echo $i;?>" >
 
-								<span>
+								<span >
 									<?php echo $nombres[$k]; ?>
 								</span>
 
@@ -306,7 +310,7 @@ include_once("../conexion.php");
 
 
 
-
+			</br>
 			<h3 style="text-align:center; font-size:25px;"><?php echo $row[0]; ?></h3>
 			</br>
 

@@ -198,15 +198,10 @@ include_once("../../conexion.php");
 $id = $_GET['cod'];
 
 //Consulta para listar el paquete correspondiente
-$paquetelista = mysql_query("SELECT nombrePaquete, imagen,descripcion, costo FROM paquetes WHERE eliminar=0 AND idPaquete='$id'",$link);
+$paquetelista = mysql_query("SELECT nombrePaquete, imagen,descripcion, costo FROM paquetes WHERE eliminar='0' AND idPaquete='$id'",$link);
 $row = mysql_fetch_array($paquetelista);
 
 ?>
-
-
-
-
-
 
 <!-- single -->
 	<div class="banner-bdy sig">
@@ -217,12 +212,13 @@ $row = mysql_fetch_array($paquetelista);
 
 
 			<div class="col-md-8 sing-img-text">
+			<h3 style="padding-left:29px;"><?php echo $row[0];   ?></h3>
 
-				<img align="right" src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" alt=" ">
+				<img align="right" src="../../administracion/imagenes/paquetes/<?php echo $row[1];?>" style="width:500px; height:313px;" alt=" ">
 
 				<div class="sing-img-text1">
 
-					<h3><?php echo $row[0];   ?></h3>
+					
 
 					<p class="est">
 						<span>
@@ -244,9 +240,9 @@ $row = mysql_fetch_array($paquetelista);
 					</div>
 					
 					
-					<div class="fb-share-button" data-href="http://www.kunturtravelagency.com/tours-cusco/choquequirao-trek-5days-4nights-3-e.html" data-layout="button_count"></div></br>
+					<div class="fb-share-button" data-href="https://www.facebook.com/pages/Kuntur-Travel-Agency/196587540442602?fref=ts" data-layout="button_count"></div></br>
 					
-					<div class="fb-page" data-href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline" data-width="360" data-height="180" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline"><a href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline">Lobo Cruz</a></blockquote></div></div>
+					<div class="fb-page" data-href="https://www.facebook.com/pages/Kuntur-Travel-Agency/196587540442602?fref=ts" data-width="360" data-height="180" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true" data-show-posts="false"><div class="fb-xfbml-parse-ignore"><blockquote cite="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline"><a href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?sk=timeline">Lobo Cruz</a></blockquote></div></div>
 
 
 
@@ -267,73 +263,7 @@ $row = mysql_fetch_array($paquetelista);
 
 						<div class="fb-comments" data-href="https://www.facebook.com/pages/Lobo-Cruz/598516906843018?fref=ts" data-numposts="5"></div></br>
 
-						
 
-						<!--
-						<ul class="media-list">
-
-
-						  <li class="media">
-
-
-							<div class="media-left">
-							  <a href="#">
-								<img class="media-object" src="../../images/11.jpg" alt="" />
-							  </a>
-							</div>
-
-
-							<div class="media-body">
-							  <h4 class="media-heading">Simmy</h4>
-							  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus 
-							  scelerisque ante sollicitudin commodo. Cras purus odio, 
-							  vestibulum in vulputate at, tempus viverra turpis. 
-							  Fusce condimentum nunc ac nisi vulputate fringilla. 
-							  Donec lacinia congue felis in faucibus.
-							  <a href="#">Reply</a>
-							</div>
-						  </li>
-
-
-
-						  <li class="media">
-							<div class="media-left">
-							  <a href="#">
-								<img class="media-object" src="../../images/13.jpg" alt="" />
-							  </a>
-							</div>
-
-							<div class="media-body">
-							  <h4 class="media-heading">Sandra Rickon</h4>
-							  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus 
-							  scelerisque ante sollicitudin commodo. Cras purus odio, 
-							  vestibulum in vulputate at, tempus viverra turpis. 
-							  Fusce condimentum nunc ac nisi vulputate fringilla. 
-							  Donec lacinia congue felis in faucibus.
-							  <a href="#">Reply</a>
-							</div>
-						  </li>
-
-
-						  <li class="media">
-							<div class="media-left">
-							  <a href="#">
-								<img class="media-object" src="../../images/12.jpg" alt="" />
-							  </a>
-							</div>
-							<div class="media-body">
-							  <h4 class="media-heading">Rita Rider</h4>
-							  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus 
-							  scelerisque ante sollicitudin commodo. Cras purus odio, 
-							  vestibulum in vulputate at, tempus viverra turpis. 
-							  Fusce condimentum nunc ac nisi vulputate fringilla. 
-							  Donec lacinia congue felis in faucibus.
-							  <a href="#">Reply</a>
-							</div>
-						  </li>
-
-
-						</ul>-->
 					</div>
 					
 				</div>
@@ -353,7 +283,7 @@ $row = mysql_fetch_array($paquetelista);
 						<h3><?php echo $titulo1?></h3>
 
 						<?php 
-							$consultaPaqueteAleatorio = "SELECT idPaquete, nombrePaquete, imagen, costo FROM paquetes WHERE eliminar='0' ORDER BY RAND()";
+							$consultaPaqueteAleatorio = "SELECT idPaquete, nombrePaquete, imagen, costo FROM paquetes WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()";
 							$conexPaqueteAleatorio = mysql_query($consultaPaqueteAleatorio,$link);
 
 							//creamos arreglos

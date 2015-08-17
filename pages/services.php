@@ -39,6 +39,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	
 <body>
 <div class="banner-with-text1">
+
+	<iframe id="video-background" width="560" height="315" src="//youtube.com/embed/KdEdI40iOwU?autoplay=1" frameborder="0" allowfullscreen></iframe>
 	<div class="container">
 <!-- header -->	
 		<div class="header">

@@ -184,7 +184,7 @@ include_once("../conexion.php");
 		$link=Conectarse();
 
 		//consulta de paquetes aleatorios
-		$ConsultaPaqueteAl = "SELECT idPaquete, nombrePaquete, imagen, costo, descripcion FROM paquetes WHERE eliminar='0' ORDER BY RAND()";
+		$ConsultaPaqueteAl = "SELECT idPaquete, nombrePaquete, imagen, costo, descripcion FROM paquetes WHERE eliminar='0' AND idioma='$i' ORDER BY RAND()";
 		$ConsultaAl =mysql_query($ConsultaPaqueteAl,$link);
 
 		//crear los arreglos
@@ -219,7 +219,7 @@ include_once("../conexion.php");
 							<a href="paquetes/paquete.php?cod=<?php echo $idPaqueteAl[$r];?>&i=<?php echo $i;?>"><?php echo $nombrePaqueteAl[$r];  ?></a> <!--NOMBRE-->
 								<span><?php echo $titulo;?>: S/. <?php echo $costoAl[$r];  ?></span> <!--COSTO -->
 						</div>
-						<p><?php echo substr(strip_tags($descripcionAl[$i]),0,26)."..."; ?></p> <!--PARRAFO -->
+						<p><?php echo substr(strip_tags($descripcionAl[$r]),0,26)."..."; ?></p> <!--PARRAFO -->
 
 
 						<div class="red-mre">

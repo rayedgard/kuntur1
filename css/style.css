@@ -3011,7 +3011,7 @@ ul.last1 li{
 {
     display:scroll;
     position:fixed;
-    top:10px;
+    top:70px;
     right:0px;
     z-index: 1200;
 }
@@ -3019,7 +3019,7 @@ ul.last1 li{
 {
     display:scroll;
     position:fixed;
-    top:60px;
+    top:120px;
     right:0px;
     z-index: 1200;
 }

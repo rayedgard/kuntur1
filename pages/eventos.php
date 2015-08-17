@@ -54,8 +54,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <body>
 
 	<!--para los iconos de idioma-->    
-    <a class='flotanteE' href='../index.php?i=0' ><img src='../images/esp.png' border="0"/></a>
-    <a class='flotanteI' href='../index.php?i=1' ><img src='../images/ing.png' border="0"/></a>
+ 
 	<!--fin idioma-->
 
 
@@ -65,11 +64,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 include_once("../conexion.php");
 	$link = Conectarse();
-	
+	$idEv = $_GET['id'];
 
-
-
-	
 
 	//Codigo para discriminar el idioma
 
@@ -92,12 +88,12 @@ include_once("../conexion.php");
 		//etiquetas
 		$precio="Cost";
 		//titulos
-		$titulo1="ABOUT US";
+		$titulo1="EVENTS";
 
 		//footer
 		$titulo2="About Eco Travel";
 		$titulo3="Connect With Us";
-		$titulo4="Extra Features";
+		$titulo4="Other Events";
 		$titulo5="WELCOME TO KUNTUR TRAVEL AGENCY";
 		$titulo6="Enjoy an unforgettable journey with our tours Cusco";
 		$titulo7="Kuntur Travel is a travel agency that has been created by Mr. Victor Hugo Torres Saravia, who has over 12 years experience in tourism; during this time he has worked in prestigious tourist agencies, where he has served as Guide Selva (Tambopata National Reserve, Manu National Park, and others), adventure guide (Inca Trail, Machu Picchu, choquequirao, and others), guide Traditional (Cusco city as Sacred Valley Area, Tipon, Maras Moray and others), has exerted university teaching and conducted graduate studies in tourism.
@@ -119,12 +115,12 @@ The aim of Kuntur Travel, is to provide high quality tourism services very serio
 		//etiquetas
 		$precio="Costo";
 			//titulos
-		$titulo1="QUIENES SOMOS";
+		$titulo1="EVENTOS";
 	
 			//footer
 		$titulo2="Acerca de Kuntur Travel";
 		$titulo3="Redes Sociales";
-		$titulo4="Caracteristicas Extras";
+		$titulo4="Otros Eventos";
 		$titulo5="BIENVENIDO A KUNTUR TRAVEL AGENCY";
 		$titulo6="Disfruta de un viaje inolvidable con nuestros tours Cusco";
 		$titulo7="Kuntur Travel es una agencia de turismo que ha sido creada por el Licenciado  Víctor Hugo Torres Saravia, quien cuenta con mas de 12 años de experiencia en la actividad turística; durante este tiempo ha trabajado en prestigiosas agencias de turismo, donde se ha desempeñado como: Guía de Selva (reserva nacional tambopata, parque nacional Manú, y otros), guía de aventura (camino inka, machupicchu, salkantay, choquequirao y otros), guía tradicional (Cusco ciudad y alrededores como Valle sagrado, Tipón, Maras Moray y otros) , ha ejercido docencia universitaria y realizado estudios de diplomado en turismo.
@@ -134,159 +130,113 @@ El objetivo de Kuntur Travel, es brindar servicios turísticos de alta calidad c
 
 	}
 	//fin discriminacion de idiom
+	
+	// EVENTOS
+	//$consultaEventos ="SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha),imagen FROM eventos WHERE id='$idEv' AND eliminar='0' AND idioma='$i' "; 
+//$eventos = mysql_query($consultaEventos,$link);
+	
+$consultaEventos = mysql_query("SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha),imagen FROM eventos WHERE id='$idEv' AND eliminar='0' AND idioma='$i' ",$link);
+$eventos = mysql_fetch_array($consultaEventos);
+
+
+
+$consulta = "SELECT id,nombre,descripcion,MONTHNAME(fecha),DAY(fecha) FROM eventos WHERE eliminar='0' AND idioma='$i'";
+	$even = mysql_query($consulta,$link);
+		//nombre del titulo
+	$idEvento1=array();
+	$nombreEvento1=array();
+	$descEvento1=array();
+	$mes1=array();
+	$dia1=array();
+
+		while($row2 = mysql_fetch_array($even))
+		{
+			array_push($idEvento1,$row2[0]);
+			array_push($nombreEvento1,$row2[1]);
+			array_push($descEvento1,$row2[2]);
+			array_push($mes1,$row2[3]);
+			array_push($dia1,$row2[4]);
+		}	
+
+	
+
+	
+
+
 ?>
 
 
-<div class="banner-with-text1">
-	<div class="container">
-<!-- header -->	
-		<div class="header">
-			
-			<div class="clearfix"> </div>
-			<div class="header-bottom">
-				<div class="header-bottom-left">
-					<a href="../index.php&i=<?php echo $i;?>">
-					<img src="../images/kuntur.png">
 
-					</a>
-				</div>
-				<div class="header-bottom-right">
-					<span class="menu">MENU</span>
-
-
-
-			<?php  if($i=='1'){echo ' 	
-							<ul class="nav1">
-								<li ><a href="../index.php?i='.$i.'">HOME</a></li>
-								<li class="cap"><a href="events.php?i='.$i.'">ABOUT US</a></li>
-								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">PACKAGES</a></li>
-								<li><a href="contact.php?i='.$i.'">CONTACTS</a></li>
-                        	</ul>
-							
-
-                        	';}
-                        	else
-                        	{
-                        		echo ' 	
-							<ul class="nav1">
-								<li ><a href="../index.php?i='.$i.'">INICIO</a></li>
-								<li class="cap"><a href="events.php?i='.$i.'">QUIENES SOMOS</a></li>
-								<li><a href="gallery.php?i='.$i.'">MULTIMEDIA</a></li>
-								<li><a href="blog.php?i='.$i.'">PAQUETES</a></li>
-								<li><a href="contact.php?i='.$i.'">CONTACTOS</a></li>
-                        	</ul>
-                        	';}
-                        	?>
-
-
-
-					<!-- script for menu -->
-						<script> 
-							$( "span.menu" ).click(function() {
-							$( "ul.nav1" ).slideToggle( 300, function() {
-							 // Animation complete.
-							});
-							});
-						</script>
-					<!-- //script for menu -->
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>	
-	</div>
-</div>
 <!-- //header -->
+
+
 <!-- events -->
 	<div class="banner-bdy eve">
 		<div class="container">
 			<div class="events">
 				<h3><?php echo $titulo1;?></h3>
-				<p class="gal-txt">Nam libero tempore, cum soluta nobis est eligendi optio 
-					cumque nihil impedit quo minus id quod maxime placeat facere possimus,
-					omnis voluptas assumenda est, omnis dolor repellendus.</p>
+
 				<div class="event-grids">
 					
 				
 				<div class="featured-events">
 
+					<h4 style="text-align: center;"><?php echo $eventos[1];?></h4>
 
-					<h4><?php echo $titulo5;?></h4>
-					<div class="col-md-8 featured-events-left">
-						<h5><?php echo $titulo6;?> </br>
-							<span><?php echo $titulo8;?></span></h5>
-						<p style="text-align: justify;";><?php echo $titulo7;?>.</p>
+					<div class="col-md-4 featured-events-right">
+						<img src="../administracion/imagenes/eventos/<?php echo  $eventos[5];?>" alt=" " />
+					</div>
 
 
+					<div class="col-md-8 featured-events-left" style="text-align:justify;" >
+					
+						<p style="text-align:justify;"><?php echo  $eventos[2];?>.</p>
 
 						
 					</div>
-					<div class="col-md-4 featured-events-right">
-						<img src="../administracion/imagenes/perfil/quienessomos.jpg" alt=" " />
-					</div>
+
+
 					<div class="clearfix"> </div>
+
+					<h3><?php echo $titulo4; ?></h3>
 				</div>
+
+
+
+				<div class="col-md-4 footer-top-grid" style="width:100%">
+
+
+					<?php
+					  for($k=0;$k<count($idEvento1);$k++)
+						  {
+					   ?>
+							<ul class="last" >
+									<li >
+									<a  href="eventos.php?id=<?php echo $idEvento1[$k];?>&i=0"><?php echo $nombreEvento1[$k];?>
+									</a>
+									</li>
+					
+							</ul>
+
+					<?php 
+						}?>
+
+					
+
+			</div>
+			<div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
 <!-- //events -->	
+
+
 <!-- footer -->
 	<div class="footer-top">
 
 		<div class="container">
 		<div class="footer-top-grids">
-			<div class="col-md-4 footer-top-grid">
-				<h3><?php echo $titulo2; ?></h3>
-				<p>"At vero eos et accusamus et iusto odio dignissimos ducimus 
-				qui blanditiis praesentium voluptatum deleniti atque corrupti quos 
-				dolores et quas molestias excepturi sint occaecati cupiditate non 
-				provident, similique sunt in culpa qui officia deserunt mollitia animi, 
-				id est laborum et dolorum fuga. </p>
-				<div class="read1">
-					<a href="paquetes/paquete.php&i=<?php echo $i;?>" ><?php echo $boton; ?></a>
-				</div>
-			</div>
-			<div class="col-md-4 footer-top-grid">
-				<h3><?php echo $titulo3; ?></h3>
-				<div class="twi-txt">
-					<div class="twi">
-						<a href="#" class="twitter"></a>
-					</div>
-					<div class="twi-text">
-						<p><a href="#">Follow Us On Twitter</a></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="twi-txt1">
-					<div class="twi">
-						<a href="#" class="flickr"> </a>
-					</div>
-					<div class="twi-text">
-						<p><a href="#">Check Us Out On Flickr</a></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div class="twi-txt1">
-					<div class="twi">
-						<a href="#" class="facebook"> </a>
-					</div>
-					<div class="twi-text">
-						<p><a href="#">Become a Fan On Facebook</a></p>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="col-md-4 footer-top-grid">
-				<h3><?php echo $titulo4; ?></h3>
-				<ul class="last">
-					<li><a href="#">Temporibus autem quibusdam</a></li>
-					<li><a href="#">Et aut officiis debitis aut</a></li>
-					<li><a href="#">Necessitatibus saepe eveniet</a></li>
-					<li><a href="#">Ut et voluptates repudiandae</a></li>
-					<li><a href="#">Molestiae non recusandae earum</a></li> 
-					<li><a href="#">Rerum hic tenetur a sapiente delectus</a></li>
-				</ul>
-			</div>
+	
 			<div class="clearfix"> </div>
 		</div>
 	</div>

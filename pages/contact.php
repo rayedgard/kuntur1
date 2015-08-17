@@ -8,6 +8,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <html>
 <head>
 <title>KUNTUR TRAVEL AGENCY</title>
+ <style type="text/css">
+            /* Set a size for our map container, the Google Map will take up 100% of this container */
+            #map {
+                width: 500px;
+                height: 300px;
+            }
+        </style>
 <link href="../css/style.css" rel="stylesheet" type="text/css" media="all" />
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -90,7 +97,12 @@ include_once("../conexion.php");
 		$titulo4="Extra Features";
 
 		$formulario1="CONTACT INFO";
-		$formulario2="Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.";
+		$formulario2="Send us your questions, concerns or suggestions, we will contact you as soon as possible. 
+KUNTUR TRAVEL AGENCY
+
+We invite you to contact with us. That way we will be able to give you the necessary information and helpful advises you could need and know.
+
+We make available important information for planning your trip Booking conditions.";
 		$formulario3="Address";
 		$formulario4="Telephone";
 		$formulario5="Email";
@@ -116,7 +128,12 @@ include_once("../conexion.php");
 
 		//formulario
 		$formulario1="INFORMACIÓN DEL CONTACTO";
-		$formulario2="cuando nuestro poder de elección es sin trabas y cuando nada impide que seamos capaces de hacer lo que es más agradable a, todo placer es de agradecer y cada dolor evitado..";
+		$formulario2="Envienos su pregunta, duda o sugerencia, nos contactaremos con usted a la brevedad posible.
+KUNTUR TRAVEL AGENCY
+
+Lo invitamos a contactarse con nosotros, para asi poder brindarle toda la ayuda e informacion que usted pueda necesitar.
+
+Ponemos a su disposicion informacion importante para la planificacion de su viaje Condiciones de reserva.";
 		$formulario3="Dirección";
 		$formulario4="Teléfono";
 		$formulario5="correo";
@@ -139,6 +156,67 @@ include_once("../conexion.php");
 	}
 	//fin discriminacion de idiom
 ?>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        
+       			 <script type="text/javascript">
+            	  // When the window has finished loading create our google map below
+           			 google.maps.event.addDomListener(window, 'load', init);
+        
+            		function init() {
+            	    // Basic options for a simple Google Map
+            	    // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+            	    //marcador con la ubicación de la Universidad
+				
+
+                var mapOptions = {
+                    // How zoomed in you want the map to start at (always required)
+                    zoom: 14,
+
+                    // The latitude and longitude to center the map (always required)
+                    center: new google.maps.LatLng(-13.526348, -71.959193), // New York
+
+                    // How you would like to style the map. 
+                    // This is where you would paste any style found on Snazzy Maps.
+                    styles: [{featureType:"road",elementType:"geometry",stylers:[{lightness:100},{visibility:"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"visibility":"on"},{"color":"#C6E2FF",}]},{"featureType":"poi","elementType":"geometry.fill","stylers":[{"color":"#C5E3BF"}]},{"featureType":"road","elementType":"geometry.fill","stylers":[{"color":"#D1D1B8"}]}]
+                };
+
+                // Get the HTML DOM element that will contain your map 
+                // We are using a div with id="map" seen below in the <body>
+                var mapElement = document.getElementById('map');
+
+                // Create the Google Map using our element and options defined above
+                var map = new google.maps.Map(mapElement, mapOptions);
+
+                // Let's also add a marker while we're at it
+                var marker = new google.maps.Marker({
+                    position: new google.maps.LatLng(-13.530977, -71.934595),
+                    map: map,
+                    title: 'Snazzy!'
+
+                     });
+
+                var popup = new google.maps.InfoWindow({
+  			    content: 'Kuntur Travel'});
+   			    popup.open(map, marker);  
+
+   			    //Imagen a mostrar con su ruta
+				/*var image = new google.maps.MarkerImage(
+     		   '../images/fachada.jpg'
+      			, new google.maps.Size(300,300));*/
+
+      			//Marcador con la imagen anterior como icono
+				var place = new google.maps.LatLng(-13.522421, -71.962623);
+				var marker = new google.maps.Marker({
+     			   position: place
+     	           , map: map
+     			   , title: 'Cayo Los Pajaros, un clic para ver a tamaño completo'
+                   , icon: image
+                   , animation: google.maps.Animation.DROP,});
+        
+            }
+        </script>
+
 <div class="banner-with-text1">
 	<div class="container">
 <!-- header -->	
@@ -198,21 +276,33 @@ include_once("../conexion.php");
 				<div class="map">
 					<h3><?php echo $titulo1;?></h3>
 					<p class="gal-txt"><?php echo $descripcion;?>.</p>
-					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2040611.236592339!2d-56.9479281!3d-2.6446517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x926eca1645365b6b%3A0xabfc431d20b2b474!2sAmazon+River%2C+Brazil!5e0!3m2!1sen!2sin!4v1432120609770" frameborder="0" style="border:0"></iframe>
+				
+					<figure >
+							
+							<div id="map" style="width:100%;"></div>					 
+					</figure>
+
+
+
 				</div>
 				<div class="contact-form">
 					<div class="col-md-4 contact-form-left">
 						<h4><?php echo $formulario1;?></h4>
-						<p><?php echo $formulario2;?>.</p>
+						<p style="text-align:justify;"><?php echo $formulario2;?>.</p>
 						<h5><?php echo $formulario3;?>:</h5>
-						<p>Eiusmod Tempor inc</p>
-						<p>9560 St Dolore Place,</p>
+
+						<p>Distrito de San Sebastian</p>
+
+						<p>Calle Sucre #85 dpto. 301,</p>
+
 						<p><?php echo $formulario4;?>: +1 800 603 6035</p>
-						<p>FAX: +1 800 889 9898</p>
-						<a href="mailto:example@email.com"><?php echo $formulario5;?>@<?php echo $formulario6;?>.com</a>
+
+						<p>Phone U.S.A. (+1) 41 553 34105</p>
+
+						<a href="mailto:example@email.com"></a>
 					</div>
 					<div class="col-md-8 contact-form-right">
-						<h4><?php echo $formulario7;?></h4>
+						<h4><?php echo $formulario7;?>info@kunturtravelagency.com</h4>
 						
 						<form>
 							<input type="text" value="<?php echo $formulario8;?>" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">

@@ -183,11 +183,7 @@ while($row2 = mysql_fetch_array($paquetesAle))
 	?>
 	    <!-- You can use open graph tags to customize link previews.
     Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-    <meta property="og:url"           content="http://www.kunturtravelagency.com" />
-    <meta property="og:type"          content="website" />
-    <meta property="og:title"         content="<?php echo $row[0];?>" />
-    <meta property="og:description"   content="<?php echo $row[2]; ?>" />
-    <meta property="og:image"         content="../../administracion/imagenes/destinos/<?php echo $row[1];?>" />
+  
 
 
 	 <a class='flotanteE' href='../../index.php?i=0' ><img src='../../images/esp.png' border="0"/></a>
